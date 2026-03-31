@@ -7,14 +7,7 @@
  */
 #pragma once
 
-#include "driver_interface.h"
-
-typedef enum TIMER_STATUS_Etag
-{
-    TIMER_STATUS_OK,
-    TIMER_STATUS_ERROR,
-    TIMER_STATUS_INVALID_PARAM
-}TIMER_STATUS_E;
+#include "AVR_Driver.h"
 
 typedef enum TIMER_ID_Etag
 {
