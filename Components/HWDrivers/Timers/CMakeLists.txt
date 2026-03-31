@@ -12,7 +12,5 @@ target_include_directories( TIMERS PUBLIC
 target_link_libraries(TIMERS 
 PRIVATE
     AVR
-
-PUBLIC
     DRV
 )
