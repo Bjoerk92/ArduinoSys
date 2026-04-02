@@ -77,7 +77,7 @@ typedef struct TIMER_CONFIG_Ttag
 
 
 
-DRV_STATUS_E Timers_Init(Timer_config_t* config);
+DRV_STATUS_E DRV_Timers_Init(Timer_config_t* config);
 
 
 void Timer_overflow_callback(void) __attribute__((signal, used, __externally_visible__));

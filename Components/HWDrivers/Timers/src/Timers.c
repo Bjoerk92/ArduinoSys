@@ -198,7 +198,7 @@ static DRV_STATUS_E setupTimerInterrupt(Timer_id_e timer_id, Timer_irq_mode_e ti
     return status;
 }
 
-DRV_STATUS_E Timers_Init(Timer_config_t* config) {
+DRV_STATUS_E DRV_Timers_Init(Timer_config_t* config) {
     
     DRV_STATUS_E status = DRV_STATUS_OK;
 
