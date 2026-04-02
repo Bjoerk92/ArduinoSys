@@ -10,8 +10,13 @@
  */
 
 #include "AVR_Driver.h"
+#include "Timers.h"
 
 void Driver_Init(void)
 {
     // Initialization code for the AVR driver
+
+    // Setup timer for system tick
+    Timer_Init();
+
 }

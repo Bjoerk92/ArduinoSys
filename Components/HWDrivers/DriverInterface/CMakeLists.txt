@@ -8,3 +8,7 @@ target_include_directories(DRV PUBLIC
     inc/
 )
 
+target_link_libraries(DRV PUBLIC 
+TIMERS 
+)
+

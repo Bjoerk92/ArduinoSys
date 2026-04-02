@@ -10,6 +10,9 @@
  */
 #pragma once
 
+#include "Timers.h"
+
+
 typedef enum DRV_STATUS_Etag
 {
     DRV_STATUS_OK,
