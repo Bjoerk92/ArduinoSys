@@ -9,4 +9,4 @@ target_include_directories(DRV INTERFACE
 )
 
 # add subfolders containing the drivers here.
-
+add_subdirectory(GPIO)
