@@ -8,11 +8,10 @@ cmake_minimum_required(VERSION 3.10)
 
 project(ArduinoSys_C)
 
-add_library(AdruinoSys_C OBJECT
-)
 
 
 
 add_subdirectory(AVR_CMSIS)
+add_subdirectory(AVR_DRIVERS)
 
 
