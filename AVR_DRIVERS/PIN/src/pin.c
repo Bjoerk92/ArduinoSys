@@ -68,21 +68,18 @@ DRV_PIN_STATUE_E setPinState(Port port, uint8_t pin, PinState state)
 
 DRV_PIN_STATUE_E togglePinState(Port port, uint8_t pin)
 {
-    volatile uint8_t *port_reg = NULL;
     switch (port) {
         case PORT_B:
-            port_reg = (volatile uint8_t *)&AVR_SYS_REG.PORTB.byte; // PORTB address
+            AVR_SYS_REG.PORTB.byte ^= (1 << pin); // PORTB address
             break;
         case PORT_C:
-            port_reg = (volatile uint8_t *)&AVR_SYS_REG.PORTC.byte; // PORTC address
+            AVR_SYS_REG.PORTC.byte ^= (1 << pin); // PORTC address
             break;
         case PORT_D:
-            port_reg = (volatile uint8_t *)&AVR_SYS_REG.PORTD.byte; // PORTD address
+            AVR_SYS_REG.PORTD.byte ^= (1 << pin); // PORTD address
             break;
         default:
             return DRV_PIN_ERROR_PIN_NOT_SUPPORTED; // Invalid port
     }
-
-    *port_reg ^= (1 << pin); // Toggle pin state
     return DRV_PIN_OK;
 }

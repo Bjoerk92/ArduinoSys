@@ -13,9 +13,8 @@ if (TARGET_CHIP STREQUAL "ATmega328P")
 
     target_include_directories(AVR INTERFACE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/chips/atmega328p>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/chips/Atmega328p>
     )
-
 
 else()
     message(FATAL_ERROR "Unsupported AVR chip: ${TARGET_CHIP}")
