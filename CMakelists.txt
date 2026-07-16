@@ -11,4 +11,3 @@ add_library(ArduinoSys INTERFACE)
 target_link_libraries(ArduinoSys INTERFACE AVR DRIVERS)
 
 add_subdirectory(AVR_CMSIS)
-add_subdirectory(AVR_DRIVERS)
