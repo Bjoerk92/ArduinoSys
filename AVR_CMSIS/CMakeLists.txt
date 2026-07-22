@@ -1,11 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-add_library(AVR_CMSIS INTERFACE
-    Atmega.h
-    avr-gcc.h
-    avr-assert.h
-    avr-interrupt.h
-)
+add_library(AVR_CMSIS INTERFACE)
 
 if (TARGET_CHIP STREQUAL "ATmega328P")
     target_link_libraries(AVR_CMSIS INTERFACE Atmega328p)
@@ -15,7 +10,6 @@ if (TARGET_CHIP STREQUAL "ATmega328P")
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/chips/Atmega328p>
     )
-
 else()
     message(FATAL_ERROR "Unsupported AVR_CMSIS chip: ${TARGET_CHIP}")
 endif()
