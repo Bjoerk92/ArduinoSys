@@ -1292,4 +1292,4 @@ typedef struct __attribute__((packed)) {
     uint8_t     reserved22[55]; // addr: 0xC7 - 0xFF:   Reserved space at address
 }Atmega328p_regs_t, *pt_atmega328p;
 
-#define AVR_SYS_REG (*(volatile Atmega328p_regs_t*)AVR_REGISTERS_BASE_ADDRESS)
+#define AVR_REGS (*(volatile Atmega328p_regs_t*)AVR_REGISTERS_BASE_ADDRESS)
