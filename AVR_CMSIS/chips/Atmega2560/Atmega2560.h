@@ -1275,10 +1275,14 @@ typedef struct{
         uint8_t byte;
     }XMCRB;
 
-    uint8_t unused_8[2];    /** unused */
+    /**
+     * @brief Address 0x56-0x57 (0x76-0x77) - unused / reserved
+     * 
+     */
+    uint8_t unused_8[2];
 
     /**
-     * @brief Address 0x56-0x57 (0x76-0x77) - ADC Data registers low and high side. 
+     * @brief Address 0x58-0x59 (0x78-0x79) - ADC Data registers low and high side. 
      * 
      */
     typedef union {
@@ -1289,7 +1293,36 @@ typedef struct{
         uint16_t word;
     }ADC_Data;
 
-    
+    /**
+     * @brief Address 0x5A (0x7A) - ADC Control and Status Register A
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t ADPS : 3;   /** ADC Prescaler select bits */
+            uint8_t ADIE : 1;   /** ADC Interrupt enable */
+            uint8_t ADIF : 1;   /** ADC Interrupt flag */
+            uint8_t ADATE : 1;  /** ADC Auto trigger Enable */
+            uint8_t ADSC : 1;   /** ADC Start Conversion */
+            uint8_t ADEN : 1;   /** ADC Enable bit */
+        }b;
+        uint8_t byte;
+    }ADCSRA;
+
+    /**
+     * @brief Address 0x5B (0x7B) - ADC Control and status Register B
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t ADTS : 3;   /** ADC Trigger source  */
+            uint8_t MUX5 : 1;   /** Analog channel and gain selection buts. used with MUX4:0 in ADMUX! */
+            uint8_t unused : 2; /** unused */
+            uint8_t ACME : 1;   /** Analog comperator multiplexer enable*/
+            uint8_t align : 1;  /** aligne / unused */
+        }b;
+        uint8_t byte; 
+    }ADCSRB;
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
@@ -1384,4 +1417,34 @@ typedef enum XMM {
     XMM_3BITS = 5,  /** 3 Bits for ecternal, 5 pins number released to Port (PC7-PC3) */
     XMM_2BITS = 6,  /** 2 Bits for ecternal, 6 pins number released to Port (PC7-PC2) */
     XMM_0BITS = 7,  /** 0 Bits for ecternal, 9 pins number released to Port (FULL PORT C) */
-}XMM_e
+}XMM_e;
+
+/**
+ * @brief Enum defining the ADC Prescaler select bits
+ * @ref ADCSRA
+ */
+typedef enum ADC_Prescaler_settings {
+    DIV_FACTOR_2A = 0,
+    DIV_FACTOR_2B = 1,
+    DIV_FACTOR_4 = 2,
+    DIV_FACTOR_8 = 3,
+    DIV_FACTOR_16 = 4,
+    DIV_FACTOR_32 = 5,
+    DIV_FACTOR_64 = 6,
+    DIV_FACTOR_128 = 7
+}ADC_Prescaler_settings_e;
+
+/**
+ * @brief Enum defining the ADC trigger posibilietes.
+ * @ref ADCSRB
+ */
+typedef enum ADC_Trigger {
+    FREE_RUNNING = 0,           /** Free running mode - not usable for differential channels!*/
+    ANALOG_COMPARATPR = 1,      /** Analog comparator */
+    EXT_IRQ_REQ_0 = 2,          /** External Interrupt Request 0 */
+    TIMER_CNT0_CMP_A = 3,       /** Timer/Counter0 compare match A */
+    TIMER_CNT0_OVERFLOW = 4,    /** Timer/Counter0 Overflow */    
+    TIMER_CNT1_CMP_A = 5,       /** Timer/Counter1 compare match A */
+    TIMER_CNT1_OVERFLOW = 6,    /** Timer/Counter1 Overflow */ 
+    TIMER_CNT1_CAP_EVENT = 7,   /** Timer/Counter1 Capture Event */
+}ADC_Trigger_e;
