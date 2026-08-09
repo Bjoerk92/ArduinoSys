@@ -1066,7 +1066,230 @@ typedef struct{
         uint8_t byte;
     }PCICR;
 
+    /**
+     * @brief Address 0x49 (0x69) - External Interrupt Control Register A
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t ISC00 : 1;  /** Interrupt control bit */
+            uint8_t ISC01 : 1;  /** Interrupt control bit */
+            uint8_t ISC10 : 1;  /** Interrupt control bit */
+            uint8_t ISC11 : 1;  /** Interrupt control bit */
+            uint8_t ISC20 : 1;  /** Interrupt control bit */
+            uint8_t ISC21 : 1;  /** Interrupt control bit */
+            uint8_t ISC30 : 1;  /** Interrupt control bit */
+            uint8_t ISC31 : 1;  /** Interrupt control bit */
+        }b;
+        uint8_t byte;
+    }EICRA;
 
+    /**
+     * @brief Address 0x4A (0x6A) - External Interrupt Control Register B
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t ISC40 : 1;  /** Interrupt control bit */
+            uint8_t ISC41 : 1;  /** Interrupt control bit */
+            uint8_t ISC50 : 1;  /** Interrupt control bit */
+            uint8_t ISC51 : 1;  /** Interrupt control bit */
+            uint8_t ISC60 : 1;  /** Interrupt control bit */
+            uint8_t ISC61 : 1;  /** Interrupt control bit */
+            uint8_t ISC70 : 1;  /** Interrupt control bit */
+            uint8_t ISC71 : 1;  /** Interrupt control bit */
+        }b;
+        uint8_t byte;
+    }EICRB;
+
+    /**
+     * @brief Address 0x4B (0x6B) - Pin change interrupt enable 0 register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t PCINT0 : 1; /** Pin 0 change interrupt enable */
+            uint8_t PCINT1 : 1; /** Pin 1 change interrupt enable */
+            uint8_t PCINT2 : 1; /** Pin 2 change interrupt enable */
+            uint8_t PCINT3 : 1; /** Pin 3 change interrupt enable */
+            uint8_t PCINT4 : 1; /** Pin 4 change interrupt enable */
+            uint8_t PCINT5 : 1; /** Pin 5 change interrupt enable */
+            uint8_t PCINT6 : 1; /** Pin 6 change interrupt enable */
+            uint8_t PCINT7 : 1; /** Pin 7 change interrupt enable */
+        }b;
+        uint8_t byte;
+    }PCMSK0;
+
+    /**
+     * @brief Address 0x4C (0x6C) - Pin change interrupt enable 0 register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t PCINT8 : 1;     /** Pin 8 change interrupt enable */
+            uint8_t PCINT9 : 1;     /** Pin 9 change interrupt enable */
+            uint8_t PCINT10 : 1;    /** Pin 10 change interrupt enable */
+            uint8_t PCINT11 : 1;    /** Pin 11 change interrupt enable */
+            uint8_t PCINT12 : 1;    /** Pin 12 change interrupt enable */
+            uint8_t PCINT13 : 1;    /** Pin 13 change interrupt enable */
+            uint8_t PCINT14 : 1;    /** Pin 14 change interrupt enable */
+            uint8_t PCINT15 : 1;    /** Pin 15 change interrupt enable */
+        }b;
+        uint8_t byte;
+    }PCMSK1;
+    
+    /**
+     * @brief Address 0x4D (0x6D) - Pin change interrupt enable 0 register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t PCINT16 : 1; /** Pin 16 change interrupt enable */
+            uint8_t PCINT17 : 1; /** Pin 17 change interrupt enable */
+            uint8_t PCINT18 : 1; /** Pin 18 change interrupt enable */
+            uint8_t PCINT19 : 1; /** Pin 19 change interrupt enable */
+            uint8_t PCINT20 : 1; /** Pin 20 change interrupt enable */
+            uint8_t PCINT21 : 1; /** Pin 21 change interrupt enable */
+            uint8_t PCINT22 : 1; /** Pin 22 change interrupt enable */
+            uint8_t PCINT23 : 1; /** Pin 23 change interrupt enable */
+        }b;
+        uint8_t byte;
+    }PCMSK2;
+
+    /**
+     * @brief address 0x4E (0x6E) - Timer/counter0 Interrupt mask register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t TOIE0 : 1;  /** Timer/counter0 overflow Interrupt enable */
+            uint8_t OCIE0A : 1; /** Timer/counter0 Compare match A interrupt enable */
+            uint8_t OCIE0B : 1; /** Timer/counter0 Compare match B interrupt enable */
+            uint8_t align : 5;  /** align / unused */
+        }b;
+        uint8_t byte;
+    }TIMSK0;
+
+    /**
+     * @brief address 0x4F (0x6F) - Timer/counter1 Interrupt mask register.
+     * 
+     */  
+    typedef union {
+        struct {
+            uint8_t TOIE1 : 1;      /** Timer/counter1 overflow interrupt enable */        
+            uint8_t OCIE1A : 1;     /** Timer/counter1 Compare match A interrupt enable */ 
+            uint8_t OCIE1B : 1;     /** Timer/counter1 Compare match B interrupt enable */ 
+            uint8_t reserved : 1;   /** reserved */                                        
+            uint8_t ICIE1 : 1;      /** Timer/counter1 Input capture interrupt enable */   
+            uint8_t align : 2;      /** align / unused */                                  
+        }b;
+        uint8_t byte;
+    }TIMSK1;
+
+    /**
+     * @brief address 0x50 (0x70) - Timer/counter2 Interrupt mask register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t TOIE2 : 1;  /** Timer/counter0 overflow Interrupt enable */
+            uint8_t OCIE2A : 1; /** Timer/counter0 Compare match A interrupt enable */
+            uint8_t OCIE2B : 1; /** Timer/counter0 Compare match B interrupt enable */
+            uint8_t align : 5;  /** align / unused */
+        }b;
+        uint8_t byte;
+    }TIMSK2;
+
+    /**
+     * @brief address 0x51 (0x71) - Timer/counter3 Interrupt mask register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t TOIE3 : 1;      /** Timer/counter3 overflow interrupt enable */       
+            uint8_t OCIE3A : 1;     /** Timer/counter3 Compare match A interrupt enable */
+            uint8_t OCIE3B : 1;     /** Timer/counter3 Compare match B interrupt enable */
+            uint8_t reserved : 1;   /** reserved */                                       
+            uint8_t ICIE3 : 1;      /** Timer/counter3 Input capture interrupt enable */  
+            uint8_t align : 2;      /** align / unused */                                 
+        }b;
+        uint8_t byte;
+    }TIMSK3;   
+
+    /**
+     * @brief address 0x52 (0x72) - Timer/counter4 Interrupt mask register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t TOIE4 : 1;      /** Timer/counter4 overflow interrupt enable */       
+            uint8_t OCIE4A : 1;     /** Timer/counter4 Compare match A interrupt enable */
+            uint8_t OCIE4B : 1;     /** Timer/counter4 Compare match B interrupt enable */
+            uint8_t reserved : 1;   /** reserved */                                       
+            uint8_t ICIE4 : 1;      /** Timer/counter4 Input capture interrupt enable */  
+            uint8_t align : 2;      /** align / unused */                                 
+        }b;
+        uint8_t byte;
+    }TIMSK4;   
+    
+    /**
+     * @brief address 0x53 (0x73) - Timer/counter5 Interrupt mask register.
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t TOIE5 : 1;      /** Timer/counter5 overflow interrupt enable */       
+            uint8_t OCIE5A : 1;     /** Timer/counter5 Compare match A interrupt enable */
+            uint8_t OCIE5B : 1;     /** Timer/counter5 Compare match B interrupt enable */
+            uint8_t reserved : 1;   /** reserved */                                       
+            uint8_t ICIE5 : 1;      /** Timer/counter5 Input capture interrupt enable */  
+            uint8_t align : 2;      /** align / unused */                                 
+        }b;
+        uint8_t byte;
+    }TIMSK5;
+
+    /**
+     * @brief Address 0x54 (0x74) - External Memory Control register
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t SRW_L : 2;  /** Wait-State select bits for lower sector */
+            uint8_t SRW_U : 2;  /** Wait-State select bits for upper sector */
+            uint8_t SRL : 3;    /** Wait-State sector limit*/
+            uint8_t SRE : 1;    /** External SRAM/XMEM Enable*/
+        }b;
+        uint8_t byte;
+    }XMCRA;
+
+    /**
+     * @brief Address 0x55 (0x75) - External Memory Control Register B
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t XMM : 3;    /** External memory high mask  used to release the port C when external memory is enabled. */
+            uint8_t align : 4;  /** aligned/unused */
+            uint8_t XMBK : 1;   /** External memory Bus-keeper Enable */
+        }b;
+        uint8_t byte;
+    }XMCRB;
+
+    uint8_t unused_8[2];    /** unused */
+
+    /**
+     * @brief Address 0x56-0x57 (0x76-0x77) - ADC Data registers low and high side. 
+     * 
+     */
+    typedef union {
+        struct {
+            uint8_t ADCL;   /** ADC Data register low byte */
+            uint8_t ADCH;   /** ADC Data register high byte */
+        }byte;
+        uint16_t word;
+    }ADC_Data;
+
+    
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
@@ -1121,3 +1344,44 @@ typedef enum Clock_Prescaler {
     CLK_PRESCALER_128 = 7,
     CLK_PRESCALER_254 = 8,
 }Clock_Prescaler_t;
+
+/**
+ * @brief enum defining the Wait-state selecter bits value for lower and upper sector
+ * @ref XMCRA register
+ */
+typedef enum SRW {
+    NO_WAIT_STATES = 0,
+    WAIT_1_CYCLE_DOING_READ_WRITE_STROBE = 1,
+    WAIT_2_CYCLE_DOING_READ_WRITE_STROBE = 2,
+    WAIT_2_CYCLE_READ_WRITE_AND_1_BEFORE_ADDRESS = 3
+}SRW_e;
+
+/**
+ * @brief enum defining the Sector limits with differnent settings. 
+ * @ref XMCRA register
+ */
+typedef enum SLR {
+    SECTOR_0 = 0, /** Lower sector = n/a, upper sector = 0x2000-0xFFFF */
+    SECTOR_1 = 1, /** Lower sector = n/a, upper sector = 0x2000-0xFFFF */
+    SECTOR_2 = 2, /** Lower sector = 0x2200-0x3FFF, upper sector = 0x4000-0xFFFF */
+    SECTOR_3 = 3, /** Lower sector = 0x2200-0x5FFF, upoer sector = 0x6000-0xFFFF */
+    SECTOR_4 = 4, /** Lower sector = 0x2200-0x7FFF, upper sector = 0x8000-0xFFFF */
+    SECTOR_5 = 5, /** Lower sector = 0x2200-0x9FFF, upper sector = 0xA000-0xFFFF */
+    SECTOR_6 = 6, /** Lower sector = 0x2200-0xBFFF, upper sector = 0xC000-0xFFFF */
+    SECTOR_7 = 7, /** Lower sector = 0x2200-0xDFFF, upper sector = 0xE000-0xFFFF */
+}SLR_e;
+
+/**
+ * @brief enum defining the External memory high mask setting
+ * @ref XMCRB
+ */
+typedef enum XMM {
+    XMM_8BITS = 0,  /** 8 Bits for ecternal, 0 pins released to Port (None) */
+    XMM_7BITS = 1,  /** 7 Bits for ecternal, 1 pins number released to Port (PC7) */
+    XMM_6BITS = 2,  /** 6 Bits for ecternal, 2 pins number released to Port (PC7-PC6) */
+    XMM_5BITS = 3,  /** 5 Bits for ecternal, 3 pins number released to Port (PC7-PC5) */
+    XMM_4BITS = 4,  /** 4 Bits for ecternal, 4 pins number released to Port (PC7-PC4) */
+    XMM_3BITS = 5,  /** 3 Bits for ecternal, 5 pins number released to Port (PC7-PC3) */
+    XMM_2BITS = 6,  /** 2 Bits for ecternal, 6 pins number released to Port (PC7-PC2) */
+    XMM_0BITS = 7,  /** 0 Bits for ecternal, 9 pins number released to Port (FULL PORT C) */
+}XMM_e
