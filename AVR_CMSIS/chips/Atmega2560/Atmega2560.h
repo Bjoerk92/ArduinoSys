@@ -1822,6 +1822,79 @@ typedef struct __attribute__((__packed__)){
     uint8_t UDR1;       /** Address 0xAE (0xCE) - USART/MSPI 1 Data register. */
     uint8_t unused_21;  /** Address 0xAF (0xCF) - unused */ 
 
+    /**
+     * @brief Address 0xB0 (0xD0) - USART/MSPIM 2 Control and status register A.
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union {
+        struct {
+            uint8_t MPCM : 1;       /** Multi-processor communication mode  */
+            uint8_t U2X : 1;        /** Double USART Transmistion speed */
+            uint8_t UPE : 1;        /** USART Parity Error  */
+            uint8_t DOR : 1;        /** Data Overrun  */
+            uint8_t FE : 1;         /** Frame error  */
+            uint8_t reserved : 3;   /** Reserved for USART */
+        }b_MSPI;
+
+        struct {
+            uint8_t reserved : 5;   /** reserved for Master SPI mode */
+            uint8_t UDRE : 1;       /** USART Data register empty */
+            uint8_t TXC : 1;        /** USART Trasmit complete  */
+            uint8_t RXC : 1;        /** USART Recieve complete */ 
+        }b_USART;
+        uint8_t byte;
+    }USCR2A;
+
+    /**
+     * @brief Address 0xB1 (0xD1) - USART/MSPIM 2 Control and status register B
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union {
+        struct {
+            uint8_t TXB8 : 1;       /** Transmit data bit 8 */
+            uint8_t RXB8 : 1;       /** Receive data bit 8 */
+            uint8_t reserved : 6;   /** reserved for USART */
+        }b_MPSI;
+        
+        struct {
+            uint8_t reserved : 2;   /** Reserved for MSPI */
+            uint8_t UCSZ02 : 1;     /** Character size used with the onse in USCR0C*/
+            uint8_t TXEN : 1;       /** Transmitter enable */
+            uint8_t RXEN : 1;       /** Receiver enable */
+            uint8_t UDRIE : 1;      /** USART Data register empty interrupt enable */
+            uint8_t TXCIE : 1;      /** TX complete interrupt enable */
+            uint8_t RXCIE : 1;      /** RX complete intrrupt enable */ 
+        }b_USART;
+        uint8_t byte;
+    }UCSR2B;
+
+    /**
+     * @brief Address 0xB2 (0xD2) - USART/MSPIM 2 Control and status register C
+     * 
+     */
+    union {
+        struct {
+            uint8_t UCPOL : 1;      /** Clock polarity (SPI CPOL in spi mode)*/
+            uint8_t UCHA :  1;      /** Clock Phase (SPI CPHA in SPI mode!) */
+            uint8_t UDORD : 1;      /** SPI Data order 1->LSB first 0->MSB */
+            uint8_t reserved : 3;   /** Reserved for USART */
+            uint8_t UMSEL : 2;      /** mode Select */
+        }b_MSPI;
+        
+        struct {
+            uint8_t synch_mode : 1; /** Only used in Synchronous mode!  */
+            uint8_t UCSZ : 2;       /** USART Character size */
+            uint8_t USB : 1;        /** Stop bit select */
+            uint8_t UPM : 2;        /** Parity mode */
+            uint8_t UMSEL : 2;      /** mode Select */
+        }b_USART;
+        uint8_t byte;
+    }UCSR2C;
+
+    uint8_t unused_22;  /** Address 0xB3 (0xD3) - unused */
+
+    uint16_t USART2;    /** Address 0xB4-5 (0xD4-5) - USART1 baudrate @note only 12 bit! */
+    uint8_t UDR2;       /** Address 0xB6 (0xD6) - USART/MSPI 1 Data register. */
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
