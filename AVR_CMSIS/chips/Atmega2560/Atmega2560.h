@@ -22,14 +22,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PINA0 : 1;  /** < Port A 0 input pin            */
-            uint8_t PINA1 : 1;  /** < Port A 1 input pin            */
-            uint8_t PINA2 : 1;  /** < Port A 2 input pin            */
-            uint8_t PINA3 : 1;  /** < Port A 3 input pin            */
-            uint8_t PINA4 : 1;  /** < Port A 4 input pin            */
-            uint8_t PINA5 : 1;  /** < Port A 5 input pin            */
-            uint8_t PINA6 : 1;  /** < Port A 6 input pin            */
-            uint8_t PINA7 : 1;  /** < Port A 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port A 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port A 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port A 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port A 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port A 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port A 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port A 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port A 7 input pin            */
         }b;                
         uint8_t byte;           /** < Port A input data register    */
     }PINA;        
@@ -43,14 +43,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRA0 : 1;  /** < Port A 0 data direction pin   */
-            uint8_t DDRA1 : 1;  /** < Port A 1 data direction pin   */
-            uint8_t DDRA2 : 1;  /** < Port A 2 data direction pin   */
-            uint8_t DDRA3 : 1;  /** < Port A 3 data direction pin   */
-            uint8_t DDRA4 : 1;  /** < Port A 4 data direction pin   */
-            uint8_t DDRA5 : 1;  /** < Port A 5 data direction pin   */
-            uint8_t DDRA6 : 1;  /** < Port A 6 data direction pin   */
-            uint8_t DDRA7 : 1;  /** < Port A 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port A 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port A 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port A 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port A 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port A 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port A 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port A 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port A 7 data direction pin   */
         }b;    
         uint8_t byte;           /** < Port A data direction register */
     }DDRA;                      
@@ -64,14 +64,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTA0 : 1; /** < Port A 0 output pin           */
-            uint8_t PORTA1 : 1; /** < Port A 1 output pin           */
-            uint8_t PORTA2 : 1; /** < Port A 2 output pin           */
-            uint8_t PORTA3 : 1; /** < Port A 3 output pin           */
-            uint8_t PORTA4 : 1; /** < Port A 4 output pin           */
-            uint8_t PORTA5 : 1; /** < Port A 5 output pin           */
-            uint8_t PORTA6 : 1; /** < Port A 6 output pin           */
-            uint8_t PORTA7 : 1; /** < Port A 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port A 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port A 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port A 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port A 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port A 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port A 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port A 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port A 7 output pin           */
         }b;                    
         uint8_t byte;           /** < Port A output data register   */
     }PORTA;                     
@@ -83,14 +83,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PINB0 : 1;  /** < Port B 0 input pin            */
-            uint8_t PINB1 : 1;  /** < Port B 1 input pin            */
-            uint8_t PINB2 : 1;  /** < Port B 2 input pin            */
-            uint8_t PINB3 : 1;  /** < Port B 3 input pin            */
-            uint8_t PINB4 : 1;  /** < Port B 4 input pin            */
-            uint8_t PINB5 : 1;  /** < Port B 5 input pin            */
-            uint8_t PINB6 : 1;  /** < Port B 6 input pin            */
-            uint8_t PINB7 : 1;  /** < Port B 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port B 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port B 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port B 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port B 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port B 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port B 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port B 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port B 7 input pin            */
         }b;                
         uint8_t byte;           /** < Port B input data register    */
     }PINB;                 
@@ -104,14 +104,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRB0 : 1;  /** < Port B 0 data direction pin   */
-            uint8_t DDRB1 : 1;  /** < Port B 1 data direction pin   */
-            uint8_t DDRB2 : 1;  /** < Port B 2 data direction pin   */
-            uint8_t DDRB3 : 1;  /** < Port B 3 data direction pin   */
-            uint8_t DDRB4 : 1;  /** < Port B 4 data direction pin   */
-            uint8_t DDRB5 : 1;  /** < Port B 5 data direction pin   */
-            uint8_t DDRB6 : 1;  /** < Port B 6 data direction pin   */
-            uint8_t DDRB7 : 1;  /** < Port B 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port B 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port B 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port B 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port B 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port B 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port B 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port B 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port B 7 data direction pin   */
         }b;                    
         uint8_t byte;           /** < Port B data direction register */
     }DDRB;                    
@@ -125,14 +125,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTB0 : 1; /** < Port B 0 output pin           */
-            uint8_t PORTB1 : 1; /** < Port B 1 output pin           */
-            uint8_t PORTB2 : 1; /** < Port B 2 output pin           */
-            uint8_t PORTB3 : 1; /** < Port B 3 output pin           */
-            uint8_t PORTB4 : 1; /** < Port B 4 output pin           */
-            uint8_t PORTB5 : 1; /** < Port B 5 output pin           */
-            uint8_t PORTB6 : 1; /** < Port B 6 output pin           */
-            uint8_t PORTB7 : 1; /** < Port B 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port B 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port B 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port B 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port B 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port B 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port B 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port B 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port B 7 output pin           */
         }b;                   
         uint8_t byte;           /** < Port B output data register   */  
     }PORTB;                    
@@ -144,14 +144,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PINC0 : 1;  /** < Port C 0 input pin            */
-            uint8_t PINC1 : 1;  /** < Port C 1 input pin            */
-            uint8_t PINC2 : 1;  /** < Port C 2 input pin            */
-            uint8_t PINC3 : 1;  /** < Port C 3 input pin            */
-            uint8_t PINC4 : 1;  /** < Port C 4 input pin            */
-            uint8_t PINC5 : 1;  /** < Port C 5 input pin            */
-            uint8_t PINC6 : 1;  /** < Port C 6 input pin            */
-            uint8_t PINC7 : 1;  /** < Port C 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port C 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port C 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port C 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port C 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port C 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port C 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port C 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port C 7 input pin            */
         }b;                    
         uint8_t byte;           /** < Port C input data register    */
     }PINC;                      
@@ -165,14 +165,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRC0 : 1;  /** < Port C 0 data direction pin   */
-            uint8_t DDRC1 : 1;  /** < Port C 1 data direction pin   */
-            uint8_t DDRC2 : 1;  /** < Port C 2 data direction pin   */
-            uint8_t DDRC3 : 1;  /** < Port C 3 data direction pin   */
-            uint8_t DDRC4 : 1;  /** < Port C 4 data direction pin   */
-            uint8_t DDRC5 : 1;  /** < Port C 5 data direction pin   */
-            uint8_t DDRC6 : 1;  /** < Port C 6 data direction pin   */
-            uint8_t DDRC7 : 1;  /** < Port C 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port C 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port C 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port C 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port C 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port C 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port C 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port C 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port C 7 data direction pin   */
         }b;                     
         uint8_t byte;           /** < Port C data direction register */
     }DDRC;                     
@@ -186,14 +186,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTC0 : 1; /** < Port C 0 output pin           */
-            uint8_t PORTC1 : 1; /** < Port C 1 output pin           */
-            uint8_t PORTC2 : 1; /** < Port C 2 output pin           */
-            uint8_t PORTC3 : 1; /** < Port C 3 output pin           */
-            uint8_t PORTC4 : 1; /** < Port C 4 output pin           */
-            uint8_t PORTC5 : 1; /** < Port C 5 output pin           */
-            uint8_t PORTC6 : 1; /** < Port C 6 output pin           */
-            uint8_t PORTC7 : 1; /** < Port C 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port C 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port C 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port C 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port C 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port C 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port C 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port C 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port C 7 output pin           */
         }b;                     
         uint8_t byte;           /** < Port C output data register   */
     }PORTC;                   
@@ -205,14 +205,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PIND0 : 1;  /** < Port D 0 input pin            */
-            uint8_t PIND1 : 1;  /** < Port D 1 input pin            */
-            uint8_t PIND2 : 1;  /** < Port D 2 input pin            */
-            uint8_t PIND3 : 1;  /** < Port D 3 input pin            */
-            uint8_t PIND4 : 1;  /** < Port D 4 input pin            */
-            uint8_t PIND5 : 1;  /** < Port D 5 input pin            */
-            uint8_t PIND6 : 1;  /** < Port D 6 input pin            */
-            uint8_t PIND7 : 1;  /** < Port D 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port D 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port D 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port D 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port D 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port D 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port D 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port D 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port D 7 input pin            */
         }b;                     
         uint8_t byte;           /** < Port D input data register    */
     }PIND;                      
@@ -226,14 +226,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRD0 : 1;  /** < Port D 0 data direction pin   */
-            uint8_t DDRD1 : 1;  /** < Port D 1 data direction pin   */
-            uint8_t DDRD2 : 1;  /** < Port D 2 data direction pin   */
-            uint8_t DDRD3 : 1;  /** < Port D 3 data direction pin   */
-            uint8_t DDRD4 : 1;  /** < Port D 4 data direction pin   */
-            uint8_t DDRD5 : 1;  /** < Port D 5 data direction pin   */
-            uint8_t DDRD6 : 1;  /** < Port D 6 data direction pin   */
-            uint8_t DDRD7 : 1;  /** < Port D 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port D 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port D 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port D 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port D 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port D 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port D 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port D 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port D 7 data direction pin   */
         }b;                      
         uint8_t byte;           /** < Port D data direction register */
     }DDRD;                      
@@ -247,14 +247,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTD0 : 1; /** < Port D 0 output pin           */
-            uint8_t PORTD1 : 1; /** < Port D 1 output pin           */
-            uint8_t PORTD2 : 1; /** < Port D 2 output pin           */
-            uint8_t PORTD3 : 1; /** < Port D 3 output pin           */
-            uint8_t PORTD4 : 1; /** < Port D 4 output pin           */
-            uint8_t PORTD5 : 1; /** < Port D 5 output pin           */
-            uint8_t PORTD6 : 1; /** < Port D 6 output pin           */
-            uint8_t PORTD7 : 1; /** < Port D 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port D 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port D 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port D 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port D 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port D 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port D 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port D 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port D 7 output pin           */
         }b;                     
         uint8_t byte;           /** < Port D output data register   */
     }PORTD;                    
@@ -266,14 +266,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PINE0 : 1;  /** < Port E 0 input pin            */
-            uint8_t PINE1 : 1;  /** < Port E 1 input pin            */
-            uint8_t PINE2 : 1;  /** < Port E 2 input pin            */
-            uint8_t PINE3 : 1;  /** < Port E 3 input pin            */
-            uint8_t PINE4 : 1;  /** < Port E 4 input pin            */
-            uint8_t PINE5 : 1;  /** < Port E 5 input pin            */
-            uint8_t PINE6 : 1;  /** < Port E 6 input pin            */
-            uint8_t PINE7 : 1;  /** < Port E 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port E 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port E 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port E 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port E 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port E 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port E 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port E 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port E 7 input pin            */
         }b;                    
         uint8_t byte;           /** < Port E input data register    */
     }PINE;                     
@@ -287,14 +287,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRE0 : 1;  /** < Port E 0 data direction pin   */
-            uint8_t DDRE1 : 1;  /** < Port E 1 data direction pin   */
-            uint8_t DDRE2 : 1;  /** < Port E 2 data direction pin   */
-            uint8_t DDRE3 : 1;  /** < Port E 3 data direction pin   */
-            uint8_t DDRE4 : 1;  /** < Port E 4 data direction pin   */
-            uint8_t DDRE5 : 1;  /** < Port E 5 data direction pin   */
-            uint8_t DDRE6 : 1;  /** < Port E 6 data direction pin   */
-            uint8_t DDRE7 : 1;  /** < Port E 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port E 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port E 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port E 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port E 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port E 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port E 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port E 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port E 7 data direction pin   */
         }b;                     
         uint8_t byte;           /** < Port E data direction register */
     }DDRE;                      
@@ -308,14 +308,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTE0 : 1; /** < Port E 0 output pin           */
-            uint8_t PORTE1 : 1; /** < Port E 1 output pin           */
-            uint8_t PORTE2 : 1; /** < Port E 2 output pin           */
-            uint8_t PORTE3 : 1; /** < Port E 3 output pin           */
-            uint8_t PORTE4 : 1; /** < Port E 4 output pin           */
-            uint8_t PORTE5 : 1; /** < Port E 5 output pin           */
-            uint8_t PORTE6 : 1; /** < Port E 6 output pin           */
-            uint8_t PORTE7 : 1; /** < Port E 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port E 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port E 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port E 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port E 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port E 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port E 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port E 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port E 7 output pin           */
         }b;                      
         uint8_t byte;           /** < Port E output data register   */
     }PORTE;                     
@@ -327,14 +327,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PINF0 : 1;  /** < Port F 0 input pin            */
-            uint8_t PINF1 : 1;  /** < Port F 1 input pin            */
-            uint8_t PINF2 : 1;  /** < Port F 2 input pin            */
-            uint8_t PINF3 : 1;  /** < Port F 3 input pin            */
-            uint8_t PINF4 : 1;  /** < Port F 4 input pin            */
-            uint8_t PINF5 : 1;  /** < Port F 5 input pin            */
-            uint8_t PINF6 : 1;  /** < Port F 6 input pin            */
-            uint8_t PINF7 : 1;  /** < Port F 7 input pin            */
+            uint8_t PIN0 : 1;  /** < Port F 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port F 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port F 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port F 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port F 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port F 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port F 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port F 7 input pin            */
         }b;                       
         uint8_t byte;           /** < Port F input data register    */
     }PINF;                      
@@ -348,14 +348,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRF0 : 1;  /** < Port F 0 data direction pin   */
-            uint8_t DDRF1 : 1;  /** < Port F 1 data direction pin   */
-            uint8_t DDRF2 : 1;  /** < Port F 2 data direction pin   */
-            uint8_t DDRF3 : 1;  /** < Port F 3 data direction pin   */
-            uint8_t DDRF4 : 1;  /** < Port F 4 data direction pin   */
-            uint8_t DDRF5 : 1;  /** < Port F 5 data direction pin   */
-            uint8_t DDRF6 : 1;  /** < Port F 6 data direction pin   */
-            uint8_t DDRF7 : 1;  /** < Port F 7 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port F 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port F 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port F 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port F 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port F 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port F 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port F 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port F 7 data direction pin   */
         }b;                     
         uint8_t byte;           /** < Port F data direction register */
     }DDRF;
@@ -369,14 +369,14 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTF0 : 1; /** < Port F 0 output pin           */
-            uint8_t PORTF1 : 1; /** < Port F 1 output pin           */
-            uint8_t PORTF2 : 1; /** < Port F 2 output pin           */
-            uint8_t PORTF3 : 1; /** < Port F 3 output pin           */
-            uint8_t PORTF4 : 1; /** < Port F 4 output pin           */
-            uint8_t PORTF5 : 1; /** < Port F 5 output pin           */
-            uint8_t PORTF6 : 1; /** < Port F 6 output pin           */
-            uint8_t PORTF7 : 1; /** < Port F 7 output pin           */
+            uint8_t PORT0 : 1; /** < Port F 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port F 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port F 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port F 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port F 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port F 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port F 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port F 7 output pin           */
         }b;                     
         uint8_t byte;           /** < Port F output data register   */
     }PORTF;                     
@@ -389,12 +389,12 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PING0 : 1;  /** < Port G 0 input pin            */
-            uint8_t PING1 : 1;  /** < Port G 1 input pin            */
-            uint8_t PING2 : 1;  /** < Port G 2 input pin            */
-            uint8_t PING3 : 1;  /** < Port G 3 input pin            */
-            uint8_t PING4 : 1;  /** < Port G 4 input pin            */
-            uint8_t PING5 : 1;  /** < Port G 5 input pin            */
+            uint8_t PIN0 : 1;  /** < Port G 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port G 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port G 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port G 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port G 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port G 5 input pin            */
             uint8_t align : 2; /** < Port G 6-7 unused              */
         }b;                     /** < Port G output bit register    */
         uint8_t byte;           /** < Port G output data register   */
@@ -409,12 +409,12 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t DDRG0 : 1;  /** < Port G 0 data direction pin   */
-            uint8_t DDRG1 : 1;  /** < Port G 1 data direction pin   */
-            uint8_t DDRG2 : 1;  /** < Port G 2 data direction pin   */
-            uint8_t DDRG3 : 1;  /** < Port G 3 data direction pin   */
-            uint8_t DDRG4 : 1;  /** < Port G 4 data direction pin   */
-            uint8_t DDRG5 : 1;  /** < Port G 5 data direction pin   */
+            uint8_t DDR0 : 1;  /** < Port G 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port G 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port G 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port G 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port G 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port G 5 data direction pin   */
             uint8_t align : 2; /** < Port G 6-7 unused              */
         }b;                     /** < Port G data direction bit register */
         uint8_t byte;           /** < Port G data direction register */
@@ -430,12 +430,12 @@ typedef struct __attribute__((__packed__)){
      */
     union {
         struct {
-            uint8_t PORTG0 : 1; /** < Port G 0 output pin           */
-            uint8_t PORTG1 : 1; /** < Port G 1 output pin           */
-            uint8_t PORTG2 : 1; /** < Port G 2 output pin           */
-            uint8_t PORTG3 : 1; /** < Port G 3 output pin           */
-            uint8_t PORTG4 : 1; /** < Port G 4 output pin           */
-            uint8_t PORTG5 : 1; /** < Port G 5 output pin           */
+            uint8_t PORT0 : 1; /** < Port G 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port G 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port G 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port G 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port G 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port G 5 output pin           */
             uint8_t align : 2;  /** < Port G 6-7 unused              */
         }b;                     /** < Port G output bit register    */
         uint8_t byte;           /** < Port G output data register   */
@@ -1897,6 +1897,128 @@ typedef struct __attribute__((__packed__)){
     uint8_t UDR2;       /** Address 0xB6 (0xD6) - USART/MSPI 1 Data register. */
 
     uint8_t unused_23[41]; /** Address 0xB7-DF (0xD7-FF) */
+
+    /**
+     * @brief Address 0xE0 (0x100) - Port H input pins
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Reading this register returns the current state of the pins.
+     */
+    union {
+        struct {
+            uint8_t PIN0 : 1;  /** < Port 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port 7 input pin            */
+        }b;                
+        uint8_t byte;           /** < Port A input data register    */
+    }PINH;        
+
+    /**
+     * @brief Address 0xE1 (0x101) - Port H data direction register
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Setting a bit to 1 configures the corresponding pin as an output, 
+     *        while setting it to 0 configures it as an input.
+     *        Reading this register returns the current configuration of the pins.  
+     */
+    union {
+        struct {
+            uint8_t DDR0 : 1;  /** < Port H 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port H 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port H 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port H 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port H 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port H 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port H 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port H 7 data direction pin   */
+        }b;    
+        uint8_t byte;           /** < Port A data direction register */
+    }DDRH;                      
+
+    /**
+     * @brief Address 0xE2 (0x102) - Port H output register
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Setting a bit to 1 sets the corresponding pin to high, 
+     *        while setting it to 0 sets it to low.
+     *        Reading this register returns the current state of the pins.
+     */
+    union {
+        struct {
+            uint8_t PORT0 : 1; /** < Port H 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port H 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port H 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port H 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port H 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port H 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port H 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port H 7 output pin           */
+        }b;                    
+        uint8_t byte;           /** < Port A output data register   */
+    }PORTH;   
+
+    /**
+     * @brief Address 0xE3 (0x103) - Port J input pins
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Reading this register returns the current state of the pins.
+     */
+    union {
+        struct {
+            uint8_t PIN0 : 1;  /** < Port 0 input pin            */
+            uint8_t PIN1 : 1;  /** < Port 1 input pin            */
+            uint8_t PIN2 : 1;  /** < Port 2 input pin            */
+            uint8_t PIN3 : 1;  /** < Port 3 input pin            */
+            uint8_t PIN4 : 1;  /** < Port 4 input pin            */
+            uint8_t PIN5 : 1;  /** < Port 5 input pin            */
+            uint8_t PIN6 : 1;  /** < Port 6 input pin            */
+            uint8_t PIN7 : 1;  /** < Port 7 input pin            */
+        }b;                
+        uint8_t byte;           /** < Port A input data register    */
+    }PIJH;        
+
+    /**
+     * @brief Address 0xE4 (0x104) - Port J data direction register
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Setting a bit to 1 configures the corresponding pin as an output, 
+     *        while setting it to 0 configures it as an input.
+     *        Reading this register returns the current configuration of the pins.  
+     */
+    union {
+        struct {
+            uint8_t DDR0 : 1;  /** < Port J 0 data direction pin   */
+            uint8_t DDR1 : 1;  /** < Port J 1 data direction pin   */
+            uint8_t DDR2 : 1;  /** < Port J 2 data direction pin   */
+            uint8_t DDR3 : 1;  /** < Port J 3 data direction pin   */
+            uint8_t DDR4 : 1;  /** < Port J 4 data direction pin   */
+            uint8_t DDR5 : 1;  /** < Port J 5 data direction pin   */
+            uint8_t DDR6 : 1;  /** < Port J 6 data direction pin   */
+            uint8_t DDR7 : 1;  /** < Port J 7 data direction pin   */
+        }b;    
+        uint8_t byte;           /** < Port A data direction register */
+    }DDRJ;                      
+
+    /**
+     * @brief Address 0xE5 (0x105) - Port J output register
+     *        Each bit in the register corresponds to a pin on Port A. 
+     *        Setting a bit to 1 sets the corresponding pin to high, 
+     *        while setting it to 0 sets it to low.
+     *        Reading this register returns the current state of the pins.
+     */
+    union {
+        struct {
+            uint8_t PORT0 : 1; /** < Port J 0 output pin           */
+            uint8_t PORT1 : 1; /** < Port J 1 output pin           */
+            uint8_t PORT2 : 1; /** < Port J 2 output pin           */
+            uint8_t PORT3 : 1; /** < Port J 3 output pin           */
+            uint8_t PORT4 : 1; /** < Port J 4 output pin           */
+            uint8_t PORT5 : 1; /** < Port J 5 output pin           */
+            uint8_t PORT6 : 1; /** < Port J 6 output pin           */
+            uint8_t PORT7 : 1; /** < Port J 7 output pin           */
+        }b;                    
+        uint8_t byte;           /** < Port A output data register   */
+    }PORTJ;   
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
