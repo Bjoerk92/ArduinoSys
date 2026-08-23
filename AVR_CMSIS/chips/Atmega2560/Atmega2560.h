@@ -1896,6 +1896,8 @@ typedef struct __attribute__((__packed__)){
     uint16_t USART2;    /** Address 0xB4-5 (0xD4-5) - USART1 baudrate @note only 12 bit! */
     uint8_t UDR2;       /** Address 0xB6 (0xD6) - USART/MSPI 1 Data register. */
 
+    uint8_t unused_23[41]; /** Address 0xB7-DF (0xD7-FF) */
+
 }Atmega2560_t, *ptr_Atmega2560_t;
 
 
