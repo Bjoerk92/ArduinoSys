@@ -2367,6 +2367,154 @@ typedef struct __attribute__((__packed__))
         uint8_t byte;
     } PORTL;
 
+    uint8_t unused_24[20]; // Address 0xEC-9F (0x10C-11F) - unused
+
+    /**
+     * @brief Address 0x100 (0x120) - Timer/counter5 control register A
+     *
+     */
+    union
+    {
+        struct
+        {
+            uint8_t WGM50 : 1; // Wave selection bit 0 for timer/counter 1
+            uint8_t WGM51 : 1; // Wave selection bit 1 for timer/counter 1
+            uint8_t COM5C : 2; // Compare Output Mode for channel C
+            uint8_t COM5B : 2; // Compare Output Mode for channel B
+            uint8_t COM5A : 2; // Compare Output Mode for channel A
+        } b;
+        uint8_t byte;
+    } TTCR5A;
+
+    /**
+     * @brief Address 0x101 (0x121) - Timer/counter5 control register B
+     *
+     */
+    union
+    {
+        struct
+        {
+            uint8_t CS : 3;     // Clock and prescaler bit selectino
+            uint8_t WGM52 : 1;  // Wave selection bit 2 for timer/counter 1
+            uint8_t WGM53 : 1;  // Wave selection bit 3 for timer/counter 1
+            uint8_t unused : 1; // unused
+            uint8_t ICES4 : 1;  // Input capture edge select
+            uint8_t ICNC4 : 1;  // Input capture noise canceler
+        } b;
+        uint8_t byte;
+    } TCCR5B;
+
+    /**
+     * @brief Address 0x102 (0x122) - Timer/counter5 control register C
+     *
+     */
+    union
+    {
+        struct
+        {
+            uint8_t unsued : 5; // unused
+            uint8_t FOC5C : 1;  // Force Output compare for channel C
+            uint8_t FOC5B : 1;  // Force Output compare for channel B
+            uint8_t FOC5A : 1;  // Force Output compare for channel A
+        } b;
+        uint8_t byte;
+    } TCCR5C;
+
+    uint8_t unused_25; // Address 0x103 (0x123) - unused
+
+    uint16_t TCNT5; // Address 0x104-105 (0x124-125) Timer/counter5 counter register
+    uint16_t ICR5;  // Address 0x106-107 (0x126-127) Timer/counter5 capture register
+    uint16_t OCR5A; // Address 0x108-109 (0x128-129) Timer/counter5 compare register A
+    uint16_t OCR5B; // Address 0x10A-10B (0x12A-12B) Timer/counter5 compare register B
+    uint16_t OCR5C; // Address 0x10C-10D (0x12C-12D) Timer/counter5 compare register C
+
+    uint16_t unused_26; // Address 0x10E-10F (0x12E-12F) - unused
+
+    /**
+     * @brief Address 0x110 (0x130) - USART/MSPIM 5 Control and status register A.
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union
+    {
+        struct
+        {
+            uint8_t MPCM : 1;     // Multi-processor communication mode
+            uint8_t U2X : 1;      // Double USART Transmistion speed
+            uint8_t UPE : 1;      // USART Parity Error
+            uint8_t DOR : 1;      // Data Overrun
+            uint8_t FE : 1;       // Frame error
+            uint8_t reserved : 3; // Reserved for USART
+        } b_MSPI;
+
+        struct
+        {
+            uint8_t reserved : 5; // reserved for Master SPI mode
+            uint8_t UDRE : 1;     // USART Data register empty
+            uint8_t TXC : 1;      // USART Trasmit complete
+            uint8_t RXC : 1;      // USART Recieve complete
+        } b_USART;
+        uint8_t byte;
+    } USCR5A;
+
+    /**
+     * @brief Address 0x111 (0x131) - USART/MSPIM 5 Control and status register B
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union
+    {
+        struct
+        {
+            uint8_t TXB8 : 1;     // Transmit data bit 8
+            uint8_t RXB8 : 1;     // Receive data bit 8
+            uint8_t reserved : 6; // reserved for USART
+        } b_MPSI;
+
+        struct
+        {
+            uint8_t reserved : 2; // Reserved for MSPI
+            uint8_t UCSZ02 : 1;   // Character size used with the onse in USCR0C
+            uint8_t TXEN : 1;     // Transmitter enable
+            uint8_t RXEN : 1;     // Receiver enable
+            uint8_t UDRIE : 1;    // USART Data register empty interrupt enable
+            uint8_t TXCIE : 1;    // TX complete interrupt enable
+            uint8_t RXCIE : 1;    // RX complete intrrupt enable
+        } b_USART;
+        uint8_t byte;
+    } UCSR5B;
+
+    /**
+     * @brief Address 0x112 (0x132) - USART/MSPIM 5 Control and status register C
+     *
+     */
+    union
+    {
+        struct
+        {
+            uint8_t UCPOL : 1;    // Clock polarity (SPI CPOL in spi mode)
+            uint8_t UCHA : 1;     // Clock Phase (SPI CPHA in SPI mode!)
+            uint8_t UDORD : 1;    // SPI Data order 1->LSB first 0->MSB
+            uint8_t reserved : 3; // Reserved for USART
+            uint8_t UMSEL : 2;    // mode Select
+        } b_MSPI;
+
+        struct
+        {
+            uint8_t synch_mode : 1; // Only used in Synchronous mode!
+            uint8_t UCSZ : 2;       // USART Character size
+            uint8_t USB : 1;        // Stop bit select
+            uint8_t UPM : 2;        // Parity mode
+            uint8_t UMSEL : 2;      // mode Select
+        } b_USART;
+        uint8_t byte;
+    } UCSR5C;
+
+    uint8_t unused_27; // Address 0x113 (0x133) - unused
+
+    uint16_t USART5;   // Address 0x114-115 (0x134-135) - USART5 baudrate @note only 12 bit!
+    uint8_t UDR5;      // Address 0x116 (0x136) - USART/MSPI 5 Data register.
+
+    // unused to and including 0x1FF
+
 } Atmega2560_t, *ptr_Atmega2560_t;
 
 /**
