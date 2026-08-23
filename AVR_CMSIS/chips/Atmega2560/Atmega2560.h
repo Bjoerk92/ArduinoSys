@@ -20,7 +20,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port A. 
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PINA0 : 1;  /** < Port A 0 input pin            */
             uint8_t PINA1 : 1;  /** < Port A 1 input pin            */
@@ -41,7 +41,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.  
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRA0 : 1;  /** < Port A 0 data direction pin   */
             uint8_t DDRA1 : 1;  /** < Port A 1 data direction pin   */
@@ -62,7 +62,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTA0 : 1; /** < Port A 0 output pin           */
             uint8_t PORTA1 : 1; /** < Port A 1 output pin           */
@@ -81,7 +81,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port B. 
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PINB0 : 1;  /** < Port B 0 input pin            */
             uint8_t PINB1 : 1;  /** < Port B 1 input pin            */
@@ -102,7 +102,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRB0 : 1;  /** < Port B 0 data direction pin   */
             uint8_t DDRB1 : 1;  /** < Port B 1 data direction pin   */
@@ -123,7 +123,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTB0 : 1; /** < Port B 0 output pin           */
             uint8_t PORTB1 : 1; /** < Port B 1 output pin           */
@@ -142,7 +142,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port C.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PINC0 : 1;  /** < Port C 0 input pin            */
             uint8_t PINC1 : 1;  /** < Port C 1 input pin            */
@@ -163,7 +163,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRC0 : 1;  /** < Port C 0 data direction pin   */
             uint8_t DDRC1 : 1;  /** < Port C 1 data direction pin   */
@@ -184,7 +184,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTC0 : 1; /** < Port C 0 output pin           */
             uint8_t PORTC1 : 1; /** < Port C 1 output pin           */
@@ -203,7 +203,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port D.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PIND0 : 1;  /** < Port D 0 input pin            */
             uint8_t PIND1 : 1;  /** < Port D 1 input pin            */
@@ -224,7 +224,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRD0 : 1;  /** < Port D 0 data direction pin   */
             uint8_t DDRD1 : 1;  /** < Port D 1 data direction pin   */
@@ -245,7 +245,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTD0 : 1; /** < Port D 0 output pin           */
             uint8_t PORTD1 : 1; /** < Port D 1 output pin           */
@@ -264,7 +264,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port E.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PINE0 : 1;  /** < Port E 0 input pin            */
             uint8_t PINE1 : 1;  /** < Port E 1 input pin            */
@@ -285,7 +285,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRE0 : 1;  /** < Port E 0 data direction pin   */
             uint8_t DDRE1 : 1;  /** < Port E 1 data direction pin   */
@@ -306,7 +306,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTE0 : 1; /** < Port E 0 output pin           */
             uint8_t PORTE1 : 1; /** < Port E 1 output pin           */
@@ -325,7 +325,7 @@ typedef struct{
      *        Each bit in the register corresponds to a pin on Port F.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PINF0 : 1;  /** < Port F 0 input pin            */
             uint8_t PINF1 : 1;  /** < Port F 1 input pin            */
@@ -346,7 +346,7 @@ typedef struct{
      *        while setting it to 0 configures it as an input.
      *        Reading this register returns the current configuration of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRF0 : 1;  /** < Port F 0 data direction pin   */
             uint8_t DDRF1 : 1;  /** < Port F 1 data direction pin   */
@@ -367,7 +367,7 @@ typedef struct{
      *        while setting it to 0 sets it to low.
      *        Reading this register returns the current state of the pins.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTF0 : 1; /** < Port F 0 output pin           */
             uint8_t PORTF1 : 1; /** < Port F 1 output pin           */
@@ -387,7 +387,7 @@ typedef struct{
      *        Reading this register returns the current state of the pins.
      * @note Port G has only 6 pins, so the upper 2 bits are unused.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PING0 : 1;  /** < Port G 0 input pin            */
             uint8_t PING1 : 1;  /** < Port G 1 input pin            */
@@ -407,7 +407,7 @@ typedef struct{
      *        Reading this register returns the current configuration of the pins.
      * @note Port G has only 6 pins, so the upper 2 bits are unused.
      */
-    typedef union {
+    union {
         struct {
             uint8_t DDRG0 : 1;  /** < Port G 0 data direction pin   */
             uint8_t DDRG1 : 1;  /** < Port G 1 data direction pin   */
@@ -428,7 +428,7 @@ typedef struct{
      *        Reading this register returns the current state of the pins.
      * @note Port G has only 6 pins, so the upper 2 bits are unused.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORTG0 : 1; /** < Port G 0 output pin           */
             uint8_t PORTG1 : 1; /** < Port G 1 output pin           */
@@ -447,7 +447,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOV0 : 1;  /** < Timer/Counter0 Overflow Flag   */
             uint8_t OCF0A : 1; /** < Timer/Counter0 Output Compare Flag A */
@@ -463,7 +463,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOV1 : 1;  /** < Timer/Counter1 Overflow Flag   */
             uint8_t OCF1A : 1; /** < Timer/Counter1 Output Compare Flag A */
@@ -481,7 +481,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOV2 : 1;  /** < Timer/Counter2 Overflow Flag   */
             uint8_t OCF2A : 1; /** < Timer/Counter2 Output Compare Flag A */
@@ -497,7 +497,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOV3 : 1;   /** < Timer/Counter3 Overflow Flag   */
             uint8_t OCF3A : 1;  /** < Timer/Counter3 Output Compare Flag A */
@@ -515,7 +515,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOV4 : 1;   /** < Timer/Counter4 Overflow Flag   */
             uint8_t OCF4A : 1;  /** < Timer/Counter4 Output Compare Flag A */
@@ -533,7 +533,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union { 
+    union { 
         struct {
             uint8_t TOV5 : 1;   /** < Timer/Counter5 Overflow Flag   */
             uint8_t OCF5A : 1;  /** < Timer/Counter5 Output Compare Flag A */
@@ -551,7 +551,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific pin change interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PCIF0 : 1;  /** < Pin Change Interrupt Flag 0    */
             uint8_t PCIF1 : 1;  /** < Pin Change Interrupt Flag 1    */
@@ -567,7 +567,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific external interrupt flag.
      *        Reading this register returns the current state of the interrupt flags.
      */
-    typedef union {
+    union {
         struct {
             uint8_t INTF0 : 1;  /** < External Interrupt Flag 0       */
             uint8_t INTF1 : 1;  /** < External Interrupt Flag 1       */
@@ -587,7 +587,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific external interrupt request.
      *        Setting a bit enables the corresponding external interrupt.
      */
-    typedef union {
+    union {
         struct {
             uint8_t INT0 : 1;  /** < External Interrupt Request 0 Enable */
             uint8_t INT1 : 1;  /** < External Interrupt Request 1 Enable */
@@ -611,7 +611,7 @@ typedef struct{
      * @brief Address 0x1F (0x3F) - EEPROM Control Register
      *        This register controls the operation of the EEPROM.
      */
-    typedef union {
+    union {
         struct {
             uint8_t EERE : 1;   /** < EEPROM Read Enable                */
             uint8_t EEPE : 1;   /** < EEPROM Programming Enable         */
@@ -642,7 +642,7 @@ typedef struct{
      * @brief Address 0x22 (0x42) - EEPROM Address Register High Byte
      *        This register is used to specify the high byte of the address in the EEPROM for read or write operations.
      */
-    typedef union {
+    union {
         struct {
             uint8_t HighByte : 4;  /** < EEPROM Address register high byte (only 4 bits used) */
             uint8_t align : 4;      /** < alignment - unused (upper 4 bits) */
@@ -656,7 +656,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific control function.
      *        Reading this register returns the current state of the control bits.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PSRSYNC : 1;  /** < Prescaler Reset for Synchronization */
             uint8_t PSRASY  : 1;  /** < Prescaler Reset Timer/Counter 2 */
@@ -670,7 +670,7 @@ typedef struct{
      * @brief Address 0x24 (0x44) - Timer/Counter Control Register A
      *        This register is used to control the operation of Timer/Counter0.
      */
-    typedef union {
+    union {
         struct {
             uint8_t WGM00 : 1;  /** < Waveform Generation Mode Bit 0 */
             uint8_t WGM01 : 1;  /** < Waveform Generation Mode Bit 1 */
@@ -687,7 +687,7 @@ typedef struct{
      * @brief Address 0x25 (0x45) - Timer/Counter Control Register B
      *        This register is used to control the operation of Timer/Counter0.
      */
-    typedef union {
+    union {
         struct {
             uint8_t CS00 : 1;  /** < Clock Select Bit 0 */
             uint8_t CS01 : 1;  /** < Clock Select Bit 1 */
@@ -737,7 +737,7 @@ typedef struct{
      * @brief Address 0x2C (0x4C) - SPI Control Register
      *        This register is used to control the operation of the SPI (Serial Peripheral Interface) module.    
      */
-    typedef union {
+    union {
         struct {
             uint8_t SPR0 : 1;  /** < SPI Clock Rate Select Bit 0 */
             uint8_t SPR1 : 1;  /** < SPI Clock Rate Select Bit 1 */
@@ -755,7 +755,7 @@ typedef struct{
      * @brief Address 0x2D (0x4D) - SPI Status Register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t SPI2X : 1;  /** < Double SPI Speed Bit */
             uint8_t unused : 5; /** < alignment - unused */
@@ -782,7 +782,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific control or status function.
      *        Reading this register returns the current state of the control and status bits.
      */
-    typedef union {
+    union {
         struct {
             uint8_t ACIS0 : 1;  /** < Analog Comparator Interrupt Mode Select Bit 0 */
             uint8_t ACIS1 : 1;  /** < Analog Comparator Interrupt Mode Select Bit 1 */
@@ -803,7 +803,7 @@ typedef struct{
      * @note IDRD is used to indicate that the CPU has written a byte to this register
      *       and the debugger can read it. 
      */
-    typedef union {
+    union {
         struct {
             uint8_t OCDR0 : 1; /** < On-Chip Debugging Register Bit 0 */
             uint8_t OCDR1 : 1; /** < On-Chip Debugging Register Bit 1 */
@@ -828,7 +828,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific sleep mode control function.
      *        Reading this register returns the current state of the sleep mode control bits.
      */
-    typedef union {
+    union {
         struct {
             uint8_t SE : 1;     /** < Sleep Enable */
             uint8_t SM : 3;     /** < Sleep Mode Select */
@@ -843,7 +843,7 @@ typedef struct{
      *        Each bit in the register corresponds to a specific status function.
      *        Reading this register returns the current state of the status bits.
      */
-    typedef union {
+    union {
         struct {
             uint8_t PORF : 1;   /** < Power-On Reset Flag */
             uint8_t EXTRF : 1;  /** < External Reset Flag */
@@ -860,7 +860,7 @@ typedef struct{
      *        This register is used to control various functions of the microcontroller.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t IVCE : 1;       /** < Interrupt Vector Change Enable */
             uint8_t IVSEL : 1;      /** < Interrupt Vector Select */
@@ -881,7 +881,7 @@ typedef struct{
      * @brief Address 0x37 (0x57) - Store Program Memory Control and Status Register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t SPMEN : 1;      /** < Store Program Memory Enable */
             uint8_t PGERS : 1;      /** < Page Erase */
@@ -905,7 +905,7 @@ typedef struct{
      *        For ELPM/SPM instructions, the Z-pointer is a concatenation of RAMPZ
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t RAMPZ0 : 1;  /** < RAMPZ Bit 0 */
             uint8_t RAMPZ1 : 1;  /** < RAMPZ Bit 1 */
@@ -924,7 +924,7 @@ typedef struct{
      *        for EICALL/EIJMP instructions the indirect-pointer to the subroutine/routine is a concatenation of EID and RAMPZ.
      * @note ICALL and IJMP are not affected by the EIND setting
      */
-    typedef union {
+    union {
         struct {
             uint8_t EIND0 : 1; /** Extended Indirect Register bit 0 */
             uint8_t EIND1 : 1; /** Extended Indirect Register bit 1 */
@@ -942,7 +942,7 @@ typedef struct{
      * @brief Address 0x3D-3E (0x5D-5E) - Stack pointer
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t SPL;
             uint8_t SPH;
@@ -953,7 +953,7 @@ typedef struct{
     /**
      * @brief Address 0x3F - AVR Status register
      */
-    typedef union {
+    union {
         struct {
             uint8_t C : 1; /** Carry flag */
             uint8_t Z : 1; /** Zero flag */
@@ -971,7 +971,7 @@ typedef struct{
      * @brief Address 0x40 (0x60) - Watchdog timer control register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t WDP0 : 1; /** Watchdog Timer Prescale bit 0 */
             uint8_t WDP1 : 1; /** Watchdog Timer Prescale bit 1 */
@@ -989,7 +989,7 @@ typedef struct{
      * @brief Address 0x41 (0x61) - Clock Prescale Register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t CLKPS : 4; /** Clock Prescale Register */
             uint8_t unused : 3; /** align - unused */
@@ -1009,7 +1009,7 @@ typedef struct{
      *        Each bit can enable a power reduction on a specific module
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PRADC : 1;      /** Power Reduction ADC */
             uint8_t PSUSART : 1;    /** Power Reduction USART0 */
@@ -1028,7 +1028,7 @@ typedef struct{
      *        Each bit can enable a power reduction on a specific module
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PRUSART1 : 1;   /** Power Reduction USART1 */
             uint8_t PRUSART2 : 1;   /** Power Reduction USART2 */
@@ -1056,7 +1056,7 @@ typedef struct{
      * @brief Address 0x48 (0x68) - Pin Change Interrupt Control register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PCIE0 : 1; /** Pin Change Interrupt Enable 0 */
             uint8_t PCIE1 : 1; /** Pin Change Interrupt Enable 1 */
@@ -1070,7 +1070,7 @@ typedef struct{
      * @brief Address 0x49 (0x69) - External Interrupt Control Register A
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t ISC00 : 1;  /** Interrupt control bit */
             uint8_t ISC01 : 1;  /** Interrupt control bit */
@@ -1088,7 +1088,7 @@ typedef struct{
      * @brief Address 0x4A (0x6A) - External Interrupt Control Register B
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t ISC40 : 1;  /** Interrupt control bit */
             uint8_t ISC41 : 1;  /** Interrupt control bit */
@@ -1106,7 +1106,7 @@ typedef struct{
      * @brief Address 0x4B (0x6B) - Pin change interrupt enable 0 register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PCINT0 : 1; /** Pin 0 change interrupt enable */
             uint8_t PCINT1 : 1; /** Pin 1 change interrupt enable */
@@ -1124,7 +1124,7 @@ typedef struct{
      * @brief Address 0x4C (0x6C) - Pin change interrupt enable 0 register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PCINT8 : 1;     /** Pin 8 change interrupt enable */
             uint8_t PCINT9 : 1;     /** Pin 9 change interrupt enable */
@@ -1142,7 +1142,7 @@ typedef struct{
      * @brief Address 0x4D (0x6D) - Pin change interrupt enable 0 register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t PCINT16 : 1; /** Pin 16 change interrupt enable */
             uint8_t PCINT17 : 1; /** Pin 17 change interrupt enable */
@@ -1160,7 +1160,7 @@ typedef struct{
      * @brief address 0x4E (0x6E) - Timer/counter0 Interrupt mask register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOIE0 : 1;  /** Timer/counter0 overflow Interrupt enable */
             uint8_t OCIE0A : 1; /** Timer/counter0 Compare match A interrupt enable */
@@ -1174,7 +1174,7 @@ typedef struct{
      * @brief address 0x4F (0x6F) - Timer/counter1 Interrupt mask register.
      * 
      */  
-    typedef union {
+    union {
         struct {
             uint8_t TOIE1 : 1;      /** Timer/counter1 overflow interrupt enable */        
             uint8_t OCIE1A : 1;     /** Timer/counter1 Compare match A interrupt enable */ 
@@ -1190,7 +1190,7 @@ typedef struct{
      * @brief address 0x50 (0x70) - Timer/counter2 Interrupt mask register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOIE2 : 1;  /** Timer/counter0 overflow Interrupt enable */
             uint8_t OCIE2A : 1; /** Timer/counter0 Compare match A interrupt enable */
@@ -1204,7 +1204,7 @@ typedef struct{
      * @brief address 0x51 (0x71) - Timer/counter3 Interrupt mask register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOIE3 : 1;      /** Timer/counter3 overflow interrupt enable */       
             uint8_t OCIE3A : 1;     /** Timer/counter3 Compare match A interrupt enable */
@@ -1220,7 +1220,7 @@ typedef struct{
      * @brief address 0x52 (0x72) - Timer/counter4 Interrupt mask register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOIE4 : 1;      /** Timer/counter4 overflow interrupt enable */       
             uint8_t OCIE4A : 1;     /** Timer/counter4 Compare match A interrupt enable */
@@ -1236,7 +1236,7 @@ typedef struct{
      * @brief address 0x53 (0x73) - Timer/counter5 Interrupt mask register.
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t TOIE5 : 1;      /** Timer/counter5 overflow interrupt enable */       
             uint8_t OCIE5A : 1;     /** Timer/counter5 Compare match A interrupt enable */
@@ -1252,7 +1252,7 @@ typedef struct{
      * @brief Address 0x54 (0x74) - External Memory Control register
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t SRW_L : 2;  /** Wait-State select bits for lower sector */
             uint8_t SRW_U : 2;  /** Wait-State select bits for upper sector */
@@ -1266,7 +1266,7 @@ typedef struct{
      * @brief Address 0x55 (0x75) - External Memory Control Register B
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t XMM : 3;    /** External memory high mask  used to release the port C when external memory is enabled. */
             uint8_t align : 4;  /** aligned/unused */
@@ -1285,7 +1285,7 @@ typedef struct{
      * @brief Address 0x58-0x59 (0x78-0x79) - ADC Data registers low and high side. 
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t ADCL;   /** ADC Data register low byte */
             uint8_t ADCH;   /** ADC Data register high byte */
@@ -1297,7 +1297,7 @@ typedef struct{
      * @brief Address 0x5A (0x7A) - ADC Control and Status Register A
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t ADPS : 3;   /** ADC Prescaler select bits */
             uint8_t ADIE : 1;   /** ADC Interrupt enable */
@@ -1313,7 +1313,7 @@ typedef struct{
      * @brief Address 0x5B (0x7B) - ADC Control and status Register B
      * 
      */
-    typedef union {
+    union {
         struct {
             uint8_t ADTS : 3;   /** ADC Trigger source  */
             uint8_t MUX5 : 1;   /** Analog channel and gain selection buts. used with MUX4:0 in ADMUX! */
@@ -1323,6 +1323,74 @@ typedef struct{
         }b;
         uint8_t byte; 
     }ADCSRB;
+
+    /**
+     * @brief Address 0x5C (0x7C) - ADC Multiplex Selection Register
+     * 
+     */
+    union {
+        struct {
+            uint8_t MUX0 : 1;   /** Analog channel 0 and gain selection bits */
+            uint8_t MUX1 : 1;   /** Analog channel 1 and gain selection bits */
+            uint8_t MUX2 : 1;   /** Analog channel 2 and gain selection bits */
+            uint8_t MUX3 : 1;   /** Analog channel 3 and gain selection bits */
+            uint8_t MUX4 : 1;   /** Analog channel 4 and gain selection bits */
+            uint8_t ADLAR : 1;  /** Left adjust ADC result */
+            uint8_t REFS : 2;   /** Reference selection bits */
+        }b;
+        uint8_t byte;
+    }ADMUX;
+
+    /**
+     * @brief Address 0x5D (0x7D) - Digital Input Disable Register 2
+     * 
+     */
+    union {
+        struct {
+            uint8_t ADC8D : 1;  /** ADC Digital input 8 Disable  */
+            uint8_t ADC9D : 1;  /** ADC Digital input 9 Disable  */
+            uint8_t ADC10D : 1; /** ADC Digital input 10 Disable  */
+            uint8_t ADC11D : 1; /** ADC Digital input 11 Disable  */
+            uint8_t ADC12D : 1; /** ADC Digital input 12 Disable  */
+            uint8_t ADC13D : 1; /** ADC Digital input 13 Disable  */
+            uint8_t ADC14D : 1; /** ADC Digital input 14 Disable  */
+            uint8_t ADC15D : 1; /** ADC Digital input 15 Disable  */
+        }b; 
+        uint8_t byte;
+    }DIDR2;
+
+    /**
+     * @brief Address 0x5E (0x7E) - Digital Input Disable Register 0
+     * 
+     */
+    union {
+        struct {
+            uint8_t ADC0D : 1; /** ADC Digital input 0 Disable  */
+            uint8_t ADC1D : 1; /** ADC Digital input 1 Disable  */
+            uint8_t ADC2D : 1; /** ADC Digital input 2 Disable  */
+            uint8_t ADC3D : 1; /** ADC Digital input 3 Disable  */
+            uint8_t ADC4D : 1; /** ADC Digital input 4 Disable  */
+            uint8_t ADC5D : 1; /** ADC Digital input 5 Disable  */
+            uint8_t ADC6D : 1; /** ADC Digital input 6 Disable  */
+            uint8_t ADC7D : 1; /** ADC Digital input 7 Disable  */
+        }b; 
+        uint8_t byte;
+    }DIDR0;
+
+    /**
+     * @brief Address 0x5F (0x7F) - Digital Input Disable Register 1
+     * 
+     */
+    union {
+        struct {
+            uint8_t AIN0D : 1; /** AIN digital input 0 Disable */
+            uint8_t AIN1D : 1; /** AIN digital input 1 Disable */
+            uint8_t align : 6; /** alginment / unused */
+        }b;
+        uint8_t byte;
+    }DIDR1;
+
+    uint8_t unused_9;
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
@@ -1448,3 +1516,14 @@ typedef enum ADC_Trigger {
     TIMER_CNT1_OVERFLOW = 6,    /** Timer/Counter1 Overflow */ 
     TIMER_CNT1_CAP_EVENT = 7,   /** Timer/Counter1 Capture Event */
 }ADC_Trigger_e;
+
+/**
+ * @brief Enum defing the ADC Multiplexer Selection Regiser Voltage reference selections
+ * @ref ADMUX
+ */
+typedef enum ADC_Reference_Selection {
+    ADC_VREF_AREF = 0,              /** ADMUX voltage reference - internal VREF turned off */
+    ADC_VREF_AVCC = 1,              /** ADMUX voltage reference - internal VREF, with external capacitor at AREF pin */
+    ADC_VREF_INTERNAL_1_1V = 2,     /** ADMUX voltage reference - internal 1.1V, with external capacitor at AREF pin */
+    ADC_VREF_INTERNAL_2_56V = 3,    /** ADMUX voltage reference - internal 2,56V, with external capacitor at AREF pin */
+}ADC_VREF_e;
