@@ -13,7 +13,7 @@
 
 constexpr uint32_t AVR_REGOFFSET = 0x20; /**< @brief The offset of the AVR registers from the base address */
 
-typedef struct{
+typedef struct __attribute__((__packed__)){
 
     /**
      * @brief Address 0x00 (0x20) - Port A input pins
@@ -1390,7 +1390,287 @@ typedef struct{
         uint8_t byte;
     }DIDR1;
 
-    uint8_t unused_9;
+    /**
+     * @brief Address 0x60 (0x80) - Timer/counter1 control register A 
+     * 
+     */
+    union {
+        struct {
+            uint8_t WGM10 : 1;  /** Wave selection bit 0 for timer/counter 1 */
+            uint8_t WGM11 : 1;  /** Wave selection bit 1 for timer/counter 1 */
+            uint8_t COM1C : 2;  /** Compare Output Mode for channel C */
+            uint8_t COM1B : 2;  /** Compare Output Mode for channel B */
+            uint8_t COM1A : 2;  /** Compare Output Mode for channel A */
+        }b;
+        uint8_t byte;
+    }TTCR1A;
+
+    /**
+     * @brief Address 0x61 (0x81) - Timer/counter1 control register B
+     * 
+     */
+    union {
+        struct {
+            uint8_t CS : 3;     /** Clock and prescaler bit selectino  */
+            uint8_t WGM12 : 1;  /** Wave selection bit 2 for timer/counter 1*/
+            uint8_t WGM13 : 1;  /** Wave selection bit 3 for timer/counter 1*/
+            uint8_t unused : 1; /** unused */
+            uint8_t ICES1 : 1;  /** Input capture edge select */
+            uint8_t ICNC1 : 1;  /** Input capture noise canceler */
+        }b;
+        uint8_t byte;
+    }TCCR1B;
+
+    /**
+     * @brief Address 0x62 (0x82) - Timer/counter1 control register C
+     * 
+     */
+    union {
+        struct {
+            uint8_t unsued : 5; /** unused */
+            uint8_t FOC1C : 1;  /** Force Output compare for channel C */
+            uint8_t FOC1B : 1;  /** Force Output compare for channel B */
+            uint8_t FOC1A : 1;  /** Force Output compare for channel A */
+        }b;
+        uint8_t byte;
+    }TCCR1C;
+
+    uint8_t unused_9;   /** Address 0x63 (0x83) - unused  */
+
+    uint16_t TCNT1;     /** Address 0x64-5 (0x84-5) Timer/counter1 counter register */
+    uint16_t ICR1;      /** Address 0x66-7 (0x86-7) Timer/counter1 capture register */
+    uint16_t OCR1A;     /** Address 0x68-9 (0x88-9) Timer/counter1 compare register A */
+    uint16_t OCR1B;     /** Address 0x6A-B (0x8A-B) Timer/counter1 compare register B */
+    uint16_t OCR1C;     /** Address 0x6C-D (0x8C-D) Timer/counter1 compare register C */
+
+    uint16_t unused_10; /** Address 0x6E-F (0x8E-F) unused */
+
+    /**
+     * @brief Address 0x70 (0x90) - Timer/counter3 control register A 
+     * 
+     */
+    union {
+        struct {
+            uint8_t WGM30 : 1;  /** Wave selection bit 0 for timer/counter 1 */
+            uint8_t WGM31 : 1;  /** Wave selection bit 1 for timer/counter 1 */
+            uint8_t COM3C : 2;  /** Compare Output Mode for channel C */
+            uint8_t COM3B : 2;  /** Compare Output Mode for channel B */
+            uint8_t COM3A : 2;  /** Compare Output Mode for channel A */
+        }b;
+        uint8_t byte;
+    }TTCR3A;
+
+    /**
+     * @brief Address 0x71 (0x91) - Timer/counter3 control register B
+     * 
+     */
+    union {
+        struct {
+            uint8_t CS : 3;     /** Clock and prescaler bit selectino  */
+            uint8_t WGM32 : 1;  /** Wave selection bit 2 for timer/counter 1*/
+            uint8_t WGM33 : 1;  /** Wave selection bit 3 for timer/counter 1*/
+            uint8_t unused : 1; /** unused */
+            uint8_t ICES3 : 1;  /** Input capture edge select */
+            uint8_t ICNC3 : 1;  /** Input capture noise canceler */
+        }b;
+        uint8_t byte;
+    }TCCR3B;
+
+    /**
+     * @brief Address 0x72 (0x92) - Timer/counter3 control register C
+     * 
+     */
+    union {
+        struct {
+            uint8_t unsued : 5; /** unused */
+            uint8_t FOC3C : 1;  /** Force Output compare for channel C */
+            uint8_t FOC3B : 1;  /** Force Output compare for channel B */
+            uint8_t FOC3A : 1;  /** Force Output compare for channel A */
+        }b;
+        uint8_t byte;
+    }TCCR3C;
+
+    uint8_t unused_11;   /** Address 0x73 (0x93) - unused  */
+
+    uint16_t TCNT3;     /** Address 0x74-5 (94-5) Timer/counter3 counter register */
+    uint16_t ICR3;      /** Address 0x76-7 (96-7) Timer/counter3 capture register */
+    uint16_t OCR3A;     /** Address 0x78-9 (98-9) Timer/counter3 compare register A */
+    uint16_t OCR3B;     /** Address 0x7A-B (9A-B) Timer/counter3 compare register B */
+    uint16_t OCR3C;     /** Address 0x7C-D (9C-D) Timer/counter3 compare register C */
+
+    uint16_t unused_12; /** Address 0x7E-F (0x9E-F) unused */
+
+    /**
+     * @brief Address 0x80 (0xA0) - Timer/counter3 control register A 
+     * 
+     */
+    union {
+        struct {
+            uint8_t WGM40 : 1;  /** Wave selection bit 0 for timer/counter 1 */
+            uint8_t WGM41 : 1;  /** Wave selection bit 1 for timer/counter 1 */
+            uint8_t COM4C : 2;  /** Compare Output Mode for channel C */
+            uint8_t COM4B : 2;  /** Compare Output Mode for channel B */
+            uint8_t COM4A : 2;  /** Compare Output Mode for channel A */
+        }b;
+        uint8_t byte;
+    }TTCR4A;
+
+    /**
+     * @brief Address 0x81 (0xA1) - Timer/counter3 control register B
+     * 
+     */
+    union {
+        struct {
+            uint8_t CS : 3;     /** Clock and prescaler bit selectino  */
+            uint8_t WGM42 : 1;  /** Wave selection bit 2 for timer/counter 1*/
+            uint8_t WGM43 : 1;  /** Wave selection bit 3 for timer/counter 1*/
+            uint8_t unused : 1; /** unused */
+            uint8_t ICES4 : 1;  /** Input capture edge select */
+            uint8_t ICNC4 : 1;  /** Input capture noise canceler */
+        }b;
+        uint8_t byte;
+    }TCCR4B;
+
+    /**
+     * @brief Address 0x82 (0xA2) - Timer/counter3 control register C
+     * 
+     */
+    union {
+        struct {
+            uint8_t unsued : 5; /** unused */
+            uint8_t FOC4C : 1;  /** Force Output compare for channel C */
+            uint8_t FOC4B : 1;  /** Force Output compare for channel B */
+            uint8_t FOC4A : 1;  /** Force Output compare for channel A */
+        }b;
+        uint8_t byte;
+    }TCCR4C;
+
+    uint8_t unused_13;  /** Address 0x83 (0xA3) - unused  */
+
+    uint16_t TCNT4;     /** Address 0x84-5 (A4-5) Timer/counter3 counter register */
+    uint16_t ICR4;      /** Address 0x86-7 (A6-7) Timer/counter3 capture register */
+    uint16_t OCR4A;     /** Address 0x88-9 (A8-9) Timer/counter3 compare register A */
+    uint16_t OCR4B;     /** Address 0x8A-B (AA-B) Timer/counter3 compare register B */
+    uint16_t OCR4C;     /** Address 0x8C-D (AC-D) Timer/counter3 compare register C */
+
+    uint16_t unused_14; /** Address 0x8E-F (0xAE-F) unused */
+
+    /**
+     * @brief Address 0x90 (0xB0) - Timer/counter2 control register A
+     * 
+     */
+    union {
+        struct {
+            uint8_t WGM20 : 1;  /** Wave generation selection bit 0 for Timer/counter2 */
+            uint8_t WGM21 : 1;  /** Wave generation selection bit 1 for Timer/counter2 */
+            uint8_t usused : 2; /** unused / alignement*/
+            uint8_t COM2B : 2;  /** Compare mode Channel B */
+            uint8_t COM2A : 2;  /** Compare mode Channel A */
+        }b; 
+        uint8_t byte;
+    }TCCR2A;
+
+    /**
+     * @brief Address 0x91 (0xB1) - Timer/counter2 control register B
+     * 
+     */
+    union {
+        struct {
+            uint8_t CS : 3;         /** Clock source / prescaler selection bits */
+            uint8_t WGM22 : 1;      /** Wave generation selection bit 2 for Timer/counter2 */
+            uint8_t unused : 2;     /** unused / alignment */
+            uint8_t FOC2B : 1;      /** Force Output compare on channel B */
+            uint8_t FOC2A : 1;      /** Force Output compare on channel C */
+        }b;
+        uint8_t byte;
+    }TCCR2B;
+
+    uint8_t TCNT2; /** Address 0x92 (0xB2) - Timer counter 2 value */
+    uint8_t OCR2A; /** Address 0x93 (0xB3) - Output compare value channel A for timer/counter2 */
+    uint8_t OCR2B; /** Address 0x94 (0xB4) - Output compare value channel B for timer/counter2 */
+
+    uint8_t unused_15; /** Address 0x95 (0xB5) - unused */
+
+    /**
+     * @brief Address 0x96 (0xB6) - Asynchronous Status register.
+     * 
+     */
+    union {
+        struct {
+            uint8_t TCR2BUB : 1;    /** Timer/couunter Control register 2 Update busy for channel B */
+            uint8_t TCT2AUB : 1;    /** Timer/couunter Control register 2 Update busy for channel A */
+            uint8_t OCR2BUB : 1;    /** Output Compare register 2 update busy for channel B */
+            uint8_t OCR2AUB : 1;    /** Output Compare register 2 update busy for channel A */
+            uint8_t TCN2UB : 1;     /** Timer/Counter2 update busy */
+            uint8_t AS2 : 1;        /** Asynchronous Timer/Counter2 */
+            uint8_t EXCLK : 1;      /** Enable External Clock input */
+        }b;
+        uint8_t byte;
+    }ASSR;
+
+    uint8_t unused_16; /** Address 0x97 (0xB7) - unused */
+
+    uint8_t TWBR;       /** Address 0x98 (0xB8) - Two wire (I2C) Bit rate register */
+
+    /**
+     * @brief Address 0x99 (0xB9) - Two wire status register
+     * 
+     */
+    union {
+        struct {
+            uint8_t TWPS : 2;   /** Two-Wire prescale bit*/
+            uint8_t unused : 1; /** unused */
+            uint8_t TWS : 5;    /** Two-Wire status  */
+        }b;
+        uint8_t byte;
+    }TWSR;
+
+
+    /**
+     * @brief Address 0x9A (0xBA) - Two wire slave address register. 
+     * 
+     */
+    union {
+        struct {
+            uint8_t TWGCE : 1;  /** Two-wire general call reconition enable bit */
+            uint8_t TWA : 7;    /** Two-wire Address */
+        }b;
+        uint8_t byte;
+    }TWAR; 
+
+    uint8_t TWDR;   /** Address 0x9B (0xBB) - Two wire interface data register */
+
+    /**
+     * @brief Address 0x9C (0xBC) - Two wire control register
+     * 
+     */
+    union {
+        struct {
+            uint8_t TWIE : 1;       /** Two-wire interrupt enable */
+            uint8_t reserved : 1;   /** Reserved / unused */
+            uint8_t TWEM : 1;       /** Two-wire enable bit */
+            uint8_t TWWC : 1;       /** Two-wire write collision flag */
+            uint8_t TWSTO : 1;      /** Two-wire Stop condition bit - for master only */
+            uint8_t TWSTA : 1;      /** Two-wire start condition bit - for master only */
+            uint8_t TWEA : 1;       /** Two-wire enable ACK bit */
+            uint8_t TWINT : 1;      /** Two-wire interrupt flag  */
+        }b;
+        uint8_t byte;
+    }TWCR;
+
+    /**
+     * @brief Address 0x9D (0xBD) - Two-wire Salve address mask reigster
+     * 
+     */
+    union {
+        struct {
+            uint8_t reserved : 1;   /** unused */
+            uint8_t TWAM : 7;       /** Two-wire address mask */
+        }b;
+        uint8_t byte;
+    }TWAMR;
+
+    uint16_t unused_17; /** Address 0x9E-F (0xBE-F) - unused */
 
 }Atmega2560_t, *ptr_Atmega2560_t;
 
@@ -1527,3 +1807,52 @@ typedef enum ADC_Reference_Selection {
     ADC_VREF_INTERNAL_1_1V = 2,     /** ADMUX voltage reference - internal 1.1V, with external capacitor at AREF pin */
     ADC_VREF_INTERNAL_2_56V = 3,    /** ADMUX voltage reference - internal 2,56V, with external capacitor at AREF pin */
 }ADC_VREF_e;
+
+/**
+ * @brief Enum defing the Timer/counter Compare mode bit.
+ * 
+ */
+typedef enum TIMER_Compare_Mode {
+    TIM_NORMAL_MODE = 0,        /** Timer compare mode normal */
+    TIM_TOGLE_ON_MATCH = 1,     /** Timer compare mode toggle OCnA/B/C on compare match. */ 
+    TIM_CLEAR_ON_MATCH = 2,     /** Timer compare mode clear OCnA/B/C on compare match. */
+    TIM_SET_ON_MACTCH = 3,      /** Timer compare mode set OCnA/B/C on compare match. */ 
+}TIMER_COM_E;
+
+/**
+ * @brief Enum defing the Timer/counter Wave generation selection bits.
+ * 
+ */
+typedef enum TIMER_Wave_selection {
+    WAVE_NORMAL = 0,                            /** normal wave mode */
+    WAVE_PWM_CORRECT_8BIT = 1,                  /** PWM Correct 8-bit version */
+    WAVE_PWM_CORRECT_9BIT = 2,                  /** PWM Correct 9-bit version */
+    WAVE_PWM_CORRECT_10BIT = 3,                 /** PWM Correct 10-bit version */
+    WAVE_CTC_OCRnA = 4,                         /** CTC mode OCRnA */
+    WAVE_FAST_PWM_8BIT = 5,                     /** Fast PWM 8-bit version */
+    WAVE_FAST_PWM_9BIT = 6,                     /** Fast PWM 9-bit version */
+    WAVE_FAST_PWM_10BIT = 7,                    /** Fast PWM 10-bit version */
+    WAVE_PWM_PHASE_AND_FREQ_CORRECT_ICRn = 8,   /** PWM Phase and Frequency correct ICRn */
+    WAVE_PWM_PHASE_AND_FREQ_CORRECT_OCRnA = 9,  /** PWM Phase and Frequency correct OCRnA */
+    WAVE_PWM_PHASE_CORRECT_ICRn = 10,           /** PWM Phase correct ICRn */
+    WAVE_PWM_PHASE_CORRECT_OCRnA = 11,          /** PWM Phase correct OCRnA */
+    WAVE_CTC_ICRn = 12,                         /** CRC mode ICRn */
+    // RESERVED = 13,                           /** reserved */
+    WAVE_FAST_PWM_ICRn = 14,                    /** Fast PWM ICRn */
+    WAVE_FAST_PWM_OCRnA = 15,                   /** Fast PWM OCRmA */
+}TIM_WGM_E;
+
+/**
+ * @brief enum defining the Timer/Counter clock source and prescaler.
+ * 
+ */
+typedef enum TIMER_Clock_Select {
+    CLOCK_NO_SOURCE = 0,
+    CLOCK_PRESCALING_1 = 1,
+    CLOCK_PRESCALING_8 = 2,
+    CLOCK_PRESCALING_64 = 3,
+    CLOCK_PRESCALING_256 = 4,
+    CLOCK_PRESCALING_1024 = 5,
+    CLOCK_EXTERNAL_FALLING_EDGE = 6,
+    CLOCK_EXTERNAL_RISING_EDGE = 7
+}TIM_CS_e;
