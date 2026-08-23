@@ -1672,6 +1672,83 @@ typedef struct __attribute__((__packed__)){
 
     uint16_t unused_17; /** Address 0x9E-F (0xBE-F) - unused */
 
+    /**
+     * @brief Address 0xA0 (0xC0) - USART/MSPIM 0 Control and status register A.
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union {
+        struct {
+            uint8_t MPCM : 1;       /** Multi-processor communication mode  */
+            uint8_t U2X : 1;        /** Double USART Transmistion speed */
+            uint8_t UPE : 1;        /** USART Parity Error  */
+            uint8_t DOR : 1;        /** Data Overrun  */
+            uint8_t FE : 1;         /** Frame error  */
+            uint8_t reserved : 3;   /** Reserved for USART */
+        }b_MSPI;
+
+        struct {
+            uint8_t reserved : 5;   /** reserved for Master SPI mode */
+            uint8_t UDRE : 1;       /** USART Data register empty */
+            uint8_t TXC : 1;        /** USART Trasmit complete  */
+            uint8_t RXC : 1;        /** USART Recieve complete */ 
+        }b_USART;
+        uint8_t byte;
+    }USCR0A;
+
+    /**
+     * @brief Address 0xA1 (0xC1) - USART/MSPIM 0 Control and status register B
+     * @note this register can either be USART or Master SPI (MSPI)!
+     */
+    union {
+        struct {
+            uint8_t TXB8 : 1;       /** Transmit data bit 8 */
+            uint8_t RXB8 : 1;       /** Receive data bit 8 */
+            uint8_t reserved : 6;   /** reserved for USART */
+        }b_MPSI;
+        
+        struct {
+            uint8_t reserved : 2;   /** Reserved for MSPI */
+            uint8_t UCSZ02 : 1;     /** Character size used with the onse in USCR0C*/
+            uint8_t TXEN : 1;       /** Transmitter enable */
+            uint8_t RXEN : 1;       /** Receiver enable */
+            uint8_t UDRIE : 1;      /** USART Data register empty interrupt enable */
+            uint8_t TXCIE : 1;      /** TX complete interrupt enable */
+            uint8_t RXCIE : 1;      /** RX complete intrrupt enable */ 
+        }b_USART;
+        uint8_t byte;
+    }UCSR0B;
+
+    /**
+     * @brief Address 0xA2 (0xC2) - USART/MSPIM 0 Control and status register C
+     * 
+     */
+    union {
+        struct {
+            uint8_t UCPOL : 1;      /** Clock polarity (SPI CPOL in spi mode)*/
+            uint8_t UCHA :  1;      /** Clock Phase (SPI CPHA in SPI mode!) */
+            uint8_t UDORD : 1;      /** SPI Data order 1->LSB first 0->MSB */
+            uint8_t reserved : 3;   /** Reserved for USART */
+            uint8_t UMSEL : 2;      /** mode Select */
+        }b_MSPI;
+        
+        struct {
+            uint8_t synch_mode : 1; /** Only used in Synchronous mode!  */
+            uint8_t UCSZ : 2;       /** USART Character size */
+            uint8_t USB : 1;        /** Stop bit select */
+            uint8_t UPM : 2;        /** Parity mode */
+            uint8_t UMSEL : 2;      /** mode Select */
+        }b_USART;
+        uint8_t byte;
+    }UCSR0C;
+
+    uint8_t unused_18;  /** Address 0xA3 (0xC3) - unused */
+
+    uint16_t USART0;    /** Address 0xA4-5 (0xC4-5) - USART0 baudrate @note only 12 bit! */
+    uint8_t UDR0;       /** Address 0xA6 (0xC6) - USART/MSPI Data register. */
+    uint8_t unused_19;  /** Address 0xA7 (0xC7) - unused */
+
+
+
 }Atmega2560_t, *ptr_Atmega2560_t;
 
 
@@ -1802,10 +1879,10 @@ typedef enum ADC_Trigger {
  * @ref ADMUX
  */
 typedef enum ADC_Reference_Selection {
-    ADC_VREF_AREF = 0,              /** ADMUX voltage reference - internal VREF turned off */
-    ADC_VREF_AVCC = 1,              /** ADMUX voltage reference - internal VREF, with external capacitor at AREF pin */
-    ADC_VREF_INTERNAL_1_1V = 2,     /** ADMUX voltage reference - internal 1.1V, with external capacitor at AREF pin */
-    ADC_VREF_INTERNAL_2_56V = 3,    /** ADMUX voltage reference - internal 2,56V, with external capacitor at AREF pin */
+    VREF_AREF = 0,              /** ADMUX voltage reference - internal VREF turned off */
+    VREF_AVCC = 1,              /** ADMUX voltage reference - internal VREF, with external capacitor at AREF pin */
+    VREF_INTERNAL_1_1V = 2,     /** ADMUX voltage reference - internal 1.1V, with external capacitor at AREF pin */
+    VREF_INTERNAL_2_56V = 3,    /** ADMUX voltage reference - internal 2,56V, with external capacitor at AREF pin */
 }ADC_VREF_e;
 
 /**
@@ -1813,10 +1890,10 @@ typedef enum ADC_Reference_Selection {
  * 
  */
 typedef enum TIMER_Compare_Mode {
-    TIM_NORMAL_MODE = 0,        /** Timer compare mode normal */
-    TIM_TOGLE_ON_MATCH = 1,     /** Timer compare mode toggle OCnA/B/C on compare match. */ 
-    TIM_CLEAR_ON_MATCH = 2,     /** Timer compare mode clear OCnA/B/C on compare match. */
-    TIM_SET_ON_MACTCH = 3,      /** Timer compare mode set OCnA/B/C on compare match. */ 
+    NORMAL_MODE = 0,        /** Timer compare mode normal */
+    TOGLE_ON_MATCH = 1,     /** Timer compare mode toggle OCnA/B/C on compare match. */ 
+    CLEAR_ON_MATCH = 2,     /** Timer compare mode clear OCnA/B/C on compare match. */
+    SET_ON_MACTCH = 3,      /** Timer compare mode set OCnA/B/C on compare match. */ 
 }TIMER_COM_E;
 
 /**
@@ -1824,22 +1901,22 @@ typedef enum TIMER_Compare_Mode {
  * 
  */
 typedef enum TIMER_Wave_selection {
-    WAVE_NORMAL = 0,                            /** normal wave mode */
-    WAVE_PWM_CORRECT_8BIT = 1,                  /** PWM Correct 8-bit version */
-    WAVE_PWM_CORRECT_9BIT = 2,                  /** PWM Correct 9-bit version */
-    WAVE_PWM_CORRECT_10BIT = 3,                 /** PWM Correct 10-bit version */
-    WAVE_CTC_OCRnA = 4,                         /** CTC mode OCRnA */
-    WAVE_FAST_PWM_8BIT = 5,                     /** Fast PWM 8-bit version */
-    WAVE_FAST_PWM_9BIT = 6,                     /** Fast PWM 9-bit version */
-    WAVE_FAST_PWM_10BIT = 7,                    /** Fast PWM 10-bit version */
-    WAVE_PWM_PHASE_AND_FREQ_CORRECT_ICRn = 8,   /** PWM Phase and Frequency correct ICRn */
-    WAVE_PWM_PHASE_AND_FREQ_CORRECT_OCRnA = 9,  /** PWM Phase and Frequency correct OCRnA */
-    WAVE_PWM_PHASE_CORRECT_ICRn = 10,           /** PWM Phase correct ICRn */
-    WAVE_PWM_PHASE_CORRECT_OCRnA = 11,          /** PWM Phase correct OCRnA */
-    WAVE_CTC_ICRn = 12,                         /** CRC mode ICRn */
+    NORMAL = 0,                            /** normal wave mode */
+    PWM_CORRECT_8BIT = 1,                  /** PWM Correct 8-bit version */
+    PWM_CORRECT_9BIT = 2,                  /** PWM Correct 9-bit version */
+    PWM_CORRECT_10BIT = 3,                 /** PWM Correct 10-bit version */
+    CTC_OCRnA = 4,                         /** CTC mode OCRnA */
+    FAST_PWM_8BIT = 5,                     /** Fast PWM 8-bit version */
+    FAST_PWM_9BIT = 6,                     /** Fast PWM 9-bit version */
+    FAST_PWM_10BIT = 7,                    /** Fast PWM 10-bit version */
+    PWM_PHASE_AND_FREQ_CORRECT_ICRn = 8,   /** PWM Phase and Frequency correct ICRn */
+    PWM_PHASE_AND_FREQ_CORRECT_OCRnA = 9,  /** PWM Phase and Frequency correct OCRnA */
+    PWM_PHASE_CORRECT_ICRn = 10,           /** PWM Phase correct ICRn */
+    PWM_PHASE_CORRECT_OCRnA = 11,          /** PWM Phase correct OCRnA */
+    CTC_ICRn = 12,                         /** CRC mode ICRn */
     // RESERVED = 13,                           /** reserved */
-    WAVE_FAST_PWM_ICRn = 14,                    /** Fast PWM ICRn */
-    WAVE_FAST_PWM_OCRnA = 15,                   /** Fast PWM OCRmA */
+    FAST_PWM_ICRn = 14,                    /** Fast PWM ICRn */
+    FAST_PWM_OCRnA = 15,                   /** Fast PWM OCRmA */
 }TIM_WGM_E;
 
 /**
@@ -1847,12 +1924,82 @@ typedef enum TIMER_Wave_selection {
  * 
  */
 typedef enum TIMER_Clock_Select {
-    CLOCK_NO_SOURCE = 0,
-    CLOCK_PRESCALING_1 = 1,
-    CLOCK_PRESCALING_8 = 2,
-    CLOCK_PRESCALING_64 = 3,
-    CLOCK_PRESCALING_256 = 4,
-    CLOCK_PRESCALING_1024 = 5,
-    CLOCK_EXTERNAL_FALLING_EDGE = 6,
-    CLOCK_EXTERNAL_RISING_EDGE = 7
+    NO_SOURCE = 0,
+    PRESCALING_1 = 1,
+    PRESCALING_8 = 2,
+    PRESCALING_64 = 3,
+    PRESCALING_256 = 4,
+    PRESCALING_1024 = 5,
+    EXTERNAL_FALLING_EDGE = 6,
+    EXTERNAL_RISING_EDGE = 7
 }TIM_CS_e;
+
+/**
+ * @brief enum defing the Master SPI mode options.
+ * @ref USCRnC
+ * 
+ */
+typedef enum SPI_Clock_Phase {
+    SPI_mode_0 = 0, /** CPOL = 0, CPHA = 0 */
+    SPI_mode_1 = 1, /** CPOL = 0, CHPA = 1 */
+    SPI_mode_2 = 2, /** CPOL = 1, CHPA = 0 */
+    SPI_Mode_3 = 3, /** CPOL = 1, CHPA = 1 */
+}SPI_Mode_e;
+
+/**
+ * @brief enum defining the Master SPI Data order options.
+ * @ref USCRnC
+ */
+typedef enum SPI_Data_order {
+    MSB_FIRST = 0,  /** Most significant byte first */
+    LSB_FIRST = 1,  /** Least significant byte first */
+}SPI_Data_order_e;
+
+/**
+ * @brief Enum defininf the character size used on the USART.
+ * @ref USCRnC
+ */
+typedef enum USART_Char_size {
+    BITSIZE_5 = 0,
+    BITSIZE_6 = 1,
+    BITSIZE_7 = 2,
+    BITSIZE_8 = 3,
+    /** Reserved = 4 */
+    /** Reserved = 5 */
+    /** Reserved = 6 */
+    BITSIZE_9 = 7,
+}USART_Char_size_e;
+
+/**
+ * @brief Enum defining the USART number of stop bit options
+ * @ref USCRnC
+ * 
+ */
+typedef enum USAST_Stopbits {
+    ONE_STOP_BIT = 0,
+    TWO_STOP_BITS = 2,
+}USART_STOPBITS_e;
+
+/**
+ * @brief Enum defininf the USART parity mode options.
+ * @ref USCRnC
+ * 
+ */
+typedef enum USART_Parity_mode {
+    PARITY_DISABLED = 0,
+    /** Reserved = 1 */
+    PARITY_EVEN = 2,
+    PARITY_ODD = 3,
+}USART_PARITY_e;
+
+/**
+ * @brief Enum defining the USART/MSPI mode selection
+ * @ref USCRnC
+ * 
+ */
+typedef enum USART_Mode_Select {
+    ASYNCHRONOUS_MODE = 0,  /** USART Asynchronous mode */
+    SYNCHRONOUS_MODE = 1,   /** USART Synchronous mode*/
+    /** Reserved = 2, */
+    MSPI_MODE = 4          /** disable USART and enable MSPIM (Master SPI Mode) */
+}USART_MODE_e;
